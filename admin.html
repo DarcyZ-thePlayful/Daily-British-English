@@ -11,8 +11,26 @@
   <header class="top">
     <div class="eyebrow">Content Studio</div>
     <h1>Add a new sentence</h1>
-    <p>This page is just for you — record, write, and export updated content files here.</p>
+    <p>This page is just for you — record, write, review, and publish content here.</p>
   </header>
+
+  <div class="admin-section">
+    <h2>GitHub connection</h2>
+    <p class="hint">Lets "Publish" save changes straight to your repo, no manual upload needed. Set up once — it's saved on this device only.</p>
+    <label>GitHub username</label>
+    <input type="text" id="ghOwner" placeholder="DarcyZ-thePlayful">
+    <label>Repository name</label>
+    <input type="text" id="ghRepo" placeholder="Daily-British-English">
+    <label>Branch</label>
+    <input type="text" id="ghBranch" placeholder="main">
+    <label>Personal access token</label>
+    <input type="text" id="ghToken" placeholder="github_pat_...">
+    <p class="hint" id="ghStatus">Not connected.</p>
+    <div style="margin-top:0.6rem; display:flex; gap:0.6rem;">
+      <button id="saveGhBtn" class="btn btn-primary">Save connection</button>
+      <button id="forgetGhBtn" class="btn btn-secondary">Forget on this device</button>
+    </div>
+  </div>
 
   <div class="tabs">
     <button id="tab-sentence" class="tab-btn active" onclick="showTab('sentence')">Sentence + audio</button>
@@ -34,9 +52,11 @@
         <audio id="recPlayback" controls></audio>
         <button id="reRecordBtn" class="btn btn-secondary">↺ Re-record</button>
         <button id="deleteRecBtn" class="btn btn-danger">Delete</button>
-        <button id="downloadRecBtn" class="btn btn-primary">⬇ Save audio file</button>
+        <button id="useRecBtn" class="btn btn-primary">✓ Use this recording</button>
+        <button id="downloadRecBtn" class="btn btn-secondary">⬇ Local copy</button>
       </div>
-      <p class="hint">Needs mic permission and a secure connection (works on GitHub Pages, or run a local server — opening the file directly with file:// may block the microphone). Type the Sentence ID below first, then save the audio so the filename matches.</p>
+      <p class="hint" id="recStatus"></p>
+      <p class="hint">Needs mic permission and a secure connection. Type the Sentence ID below first, then tap "Use this recording" so it's linked to the right sentence.</p>
     </div>
 
     <div class="admin-section">
@@ -67,15 +87,17 @@
       <input type="text" id="sentenceWords" placeholder="GP, appointment">
 
       <div style="margin-top:1rem;">
-        <button id="addSentenceBtn" class="btn btn-primary">Add sentence to lesson</button>
+        <button id="addSentenceBtn" class="btn btn-primary">Add / update sentence</button>
       </div>
     </div>
 
     <div class="admin-section">
-      <h2>3. Export updated content</h2>
-      <p class="hint"><span id="lessonCount">0</span> lessons, <span id="sentenceCount">0</span> sentences total in memory. Download and use this file to replace <code>data/sentences.json</code> in your project.</p>
-      <button id="downloadSentencesBtn" class="btn btn-primary" disabled>⬇ Download sentences.json</button>
-      <pre class="output" id="sentencesOutput" style="margin-top:0.8rem; max-height:220px; overflow-y:auto;"></pre>
+      <h2>Your lessons</h2>
+      <p class="hint"><span id="lessonCount">0</span> lessons, <span id="sentenceCount">0</span> sentences.</p>
+      <div id="sentenceList"></div>
+      <div style="margin-top:1rem;">
+        <button id="downloadSentencesBtn" class="btn btn-secondary" disabled>⬇ Download sentences.json backup</button>
+      </div>
     </div>
   </div>
 
@@ -90,16 +112,25 @@
       <label>Note (optional context or usage tip)</label>
       <textarea id="dictNote" placeholder="GP = General Practitioner, your local family doctor in the UK."></textarea>
       <div style="margin-top:1rem;">
-        <button id="addDictWordBtn" class="btn btn-primary">Add word</button>
+        <button id="addDictWordBtn" class="btn btn-primary">Add / update word</button>
       </div>
     </div>
 
     <div class="admin-section">
-      <h2>Export updated dictionary</h2>
-      <p class="hint"><span id="dictCount">0</span> words total in memory. Download and use this file to replace <code>data/dictionary.json</code>.</p>
-      <button id="downloadDictionaryBtn" class="btn btn-primary" disabled>⬇ Download dictionary.json</button>
-      <pre class="output" id="dictionaryOutput" style="margin-top:0.8rem; max-height:220px; overflow-y:auto;"></pre>
+      <h2>Your dictionary</h2>
+      <p class="hint"><span id="dictCount">0</span> words.</p>
+      <div id="dictionaryList"></div>
+      <div style="margin-top:1rem;">
+        <button id="downloadDictionaryBtn" class="btn btn-secondary" disabled>⬇ Download dictionary.json backup</button>
+      </div>
     </div>
+  </div>
+
+  <div class="admin-section">
+    <h2>3. Publish</h2>
+    <p class="hint" id="publishSummary">Pending: nothing yet.</p>
+    <button id="publishBtn" class="btn btn-primary" disabled>🚀 Publish all to GitHub</button>
+    <pre class="output" id="publishLog" style="margin-top:0.8rem; min-height:2rem;"></pre>
   </div>
 
 </div>
