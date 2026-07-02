@@ -1,0 +1,74 @@
+{
+  "lessons": [
+    {
+      "id": "lesson-01",
+      "title": "Ordering a Coffee",
+      "titleZh": "点咖啡",
+      "sentences": [
+        {
+          "id": "l01-s01",
+          "en": "Could I get a flat white to take away, please?",
+          "zh": "我可以要一杯外带的澄白咖啡吗？",
+          "audio": "audio/l01-s01.webm",
+          "words": ["flat white", "take away"]
+        },
+        {
+          "id": "l01-s02",
+          "en": "Sorry, do you have any oat milk?",
+          "zh": "不好意思，请问有燕麦奶吗？",
+          "audio": "audio/l01-s02.webm",
+          "words": ["oat milk"]
+        },
+        {
+          "id": "l01-s03",
+          "en": "That's grand, thanks very much.",
+          "zh": "太好了，非常感谢。",
+          "audio": "audio/l01-s03.webm",
+          "words": ["grand"]
+        }
+      ]
+    },
+    {
+      "id": "lesson-02",
+      "title": "Asking for Directions",
+      "titleZh": "问路",
+      "sentences": [
+        {
+          "id": "l02-s01",
+          "en": "Excuse me, is this the right way to the station?",
+          "zh": "打扰一下，请问这条路是去车站的吗？",
+          "audio": "audio/l02-s01.webm",
+          "words": ["excuse me", "station"]
+        },
+        {
+          "id": "l02-s02",
+          "en": "It's just round the corner, you can't miss it.",
+          "zh": "就在拐角处，你一定能找到。",
+          "audio": "audio/l02-s02.webm",
+          "words": ["round the corner", "you can't miss it"]
+        }
+      ]
+    },
+    {
+      "id": "lesson-03",
+      "title": "Settling into Halls",
+      "titleZh": "入住宿舍",
+      "sentences": [
+        {
+          "id": "l03-s01",
+          "en": "Hiya, are you one of my new flatmates?",
+          "zh": "嗨，你是我的新室友吗？",
+          "audio": "audio/l03-s01.webm",
+          "words": ["hiya", "flatmate"]
+        },
+        {
+          "id": "l03-s02",
+          "en": "The kitchen's a bit of a state, sorry about that.",
+          "zh": "厨房有点乱，不好意思。",
+          "audio": "audio/l03-s02.webm",
+          "words": ["a bit of a state"]
+        }
+      ]
+    }
+  ]
+}
