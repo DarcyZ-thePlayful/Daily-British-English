@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Studio — Daily British English</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">Content Studio</div>
+    <h1>Add a new sentence</h1>
+    <p>This page is just for you — record, write, and export updated content files here.</p>
+  </header>
+
+  <div class="tabs">
+    <button id="tab-sentence" class="tab-btn active" onclick="showTab('sentence')">Sentence + audio</button>
+    <button id="tab-dictionary" class="tab-btn" onclick="showTab('dictionary')">Dictionary word</button>
+  </div>
+
+  <!-- SENTENCE TAB -->
+  <div id="panel-sentence" class="tab-panel">
+
+    <div class="admin-section">
+      <h2>1. Record the audio</h2>
+      <div class="record-row">
+        <button id="startRecBtn" class="btn btn-primary">● Start recording</button>
+        <button id="stopRecBtn" class="btn btn-secondary" disabled>■ Stop</button>
+        <span class="rec-dot" id="recDot"></span>
+        <span class="timer" id="recTimer">00:00</span>
+      </div>
+      <div class="record-row" id="recPlaybackWrap" style="display:none;">
+        <audio id="recPlayback" controls></audio>
+        <button id="reRecordBtn" class="btn btn-secondary">↺ Re-record</button>
+        <button id="deleteRecBtn" class="btn btn-danger">Delete</button>
+        <button id="downloadRecBtn" class="btn btn-primary">⬇ Save audio file</button>
+      </div>
+      <p class="hint">Needs mic permission and a secure connection (works on GitHub Pages, or run a local server — opening the file directly with file:// may block the microphone). Type the Sentence ID below first, then save the audio so the filename matches.</p>
+    </div>
+
+    <div class="admin-section">
+      <h2>2. Write the sentence</h2>
+
+      <label>Lesson</label>
+      <select id="lessonSelect"></select>
+
+      <div id="newLessonFields" style="display:none;">
+        <label>New lesson ID (e.g. lesson-04)</label>
+        <input type="text" id="newLessonId" placeholder="lesson-04">
+        <label>New lesson title (English)</label>
+        <input type="text" id="newLessonTitle" placeholder="At the GP">
+        <label>New lesson title (Chinese)</label>
+        <input type="text" id="newLessonTitleZh" placeholder="看医生">
+      </div>
+
+      <label>Sentence ID (e.g. l01-s04) — used to match the audio file</label>
+      <input type="text" id="sentenceId" placeholder="l01-s04">
+
+      <label>English sentence</label>
+      <textarea id="sentenceEn" placeholder="Could I book a GP appointment for this week?"></textarea>
+
+      <label>Chinese translation</label>
+      <textarea id="sentenceZh" placeholder="我可以预约这周的家庭医生吗？"></textarea>
+
+      <label>Clickable words/phrases (comma-separated, must match how they appear in the sentence)</label>
+      <input type="text" id="sentenceWords" placeholder="GP, appointment">
+
+      <div style="margin-top:1rem;">
+        <button id="addSentenceBtn" class="btn btn-primary">Add sentence to lesson</button>
+      </div>
+    </div>
+
+    <div class="admin-section">
+      <h2>3. Export updated content</h2>
+      <p class="hint"><span id="lessonCount">0</span> lessons, <span id="sentenceCount">0</span> sentences total in memory. Download and use this file to replace <code>data/sentences.json</code> in your project.</p>
+      <button id="downloadSentencesBtn" class="btn btn-primary" disabled>⬇ Download sentences.json</button>
+      <pre class="output" id="sentencesOutput" style="margin-top:0.8rem; max-height:220px; overflow-y:auto;"></pre>
+    </div>
+  </div>
+
+  <!-- DICTIONARY TAB -->
+  <div id="panel-dictionary" class="tab-panel" style="display:none;">
+    <div class="admin-section">
+      <h2>Add a dictionary word</h2>
+      <label>Word or phrase (lowercase, exactly as it appears in sentences)</label>
+      <input type="text" id="dictWord" placeholder="gp appointment">
+      <label>Chinese meaning</label>
+      <input type="text" id="dictZh" placeholder="家庭医生预约">
+      <label>Note (optional context or usage tip)</label>
+      <textarea id="dictNote" placeholder="GP = General Practitioner, your local family doctor in the UK."></textarea>
+      <div style="margin-top:1rem;">
+        <button id="addDictWordBtn" class="btn btn-primary">Add word</button>
+      </div>
+    </div>
+
+    <div class="admin-section">
+      <h2>Export updated dictionary</h2>
+      <p class="hint"><span id="dictCount">0</span> words total in memory. Download and use this file to replace <code>data/dictionary.json</code>.</p>
+      <button id="downloadDictionaryBtn" class="btn btn-primary" disabled>⬇ Download dictionary.json</button>
+      <pre class="output" id="dictionaryOutput" style="margin-top:0.8rem; max-height:220px; overflow-y:auto;"></pre>
+    </div>
+  </div>
+
+</div>
+<script src="js/admin.js"></script>
+</body>
+</html>
