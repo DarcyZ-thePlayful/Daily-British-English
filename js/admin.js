@@ -9,8 +9,11 @@ let recordedMimeType = '';
 let timerInterval = null;
 let recordStart = null;
 let dataDirty = { sentences: false, dictionary: false };
+let pendingAudio = {}; // sentenceId -> { blob, ext }
 
 const el = (id) => document.getElementById(id);
+
+/* ---------- Audio format helpers ---------- */
 
 function getSupportedMimeType() {
   const candidates = [
@@ -35,11 +38,174 @@ function extFromMimeType(mime) {
   return 'webm';
 }
 
+/* ---------- GitHub settings ---------- */
+
+function getGitHubSettings() {
+  return {
+    owner: localStorage.getItem('gh_owner') || '',
+    repo: localStorage.getItem('gh_repo') || '',
+    branch: localStorage.getItem('gh_branch') || 'main',
+    token: localStorage.getItem('gh_token') || ''
+  };
+}
+
+function isGitHubConfigured() {
+  const s = getGitHubSettings();
+  return !!(s.owner && s.repo && s.token);
+}
+
+function loadGitHubSettingsIntoForm() {
+  const s = getGitHubSettings();
+  el('ghOwner').value = s.owner;
+  el('ghRepo').value = s.repo;
+  el('ghBranch').value = s.branch;
+  el('ghToken').value = s.token;
+  updateGitHubStatus();
+}
+
+function saveGitHubSettings() {
+  localStorage.setItem('gh_owner', el('ghOwner').value.trim());
+  localStorage.setItem('gh_repo', el('ghRepo').value.trim());
+  localStorage.setItem('gh_branch', el('ghBranch').value.trim() || 'main');
+  localStorage.setItem('gh_token', el('ghToken').value.trim());
+  updateGitHubStatus();
+  loadData();
+}
+
+function forgetGitHubSettings() {
+  ['gh_owner', 'gh_repo', 'gh_branch', 'gh_token'].forEach(k => localStorage.removeItem(k));
+  loadGitHubSettingsIntoForm();
+}
+
+function updateGitHubStatus() {
+  const configured = isGitHubConfigured();
+  el('ghStatus').textContent = configured
+    ? '✓ Connected — Publish will save straight to your repo.'
+    : 'Not connected — you can still write content and download JSON backups manually.';
+  el('ghStatus').className = configured ? 'hint status-ok' : 'hint';
+  el('publishBtn').disabled = !configured;
+}
+
+/* ---------- GitHub API ---------- */
+
+function utf8ToBase64(str) {
+  return btoa(unescape(encodeURIComponent(str)));
+}
+
+async function blobToBase64(blob) {
+  const buffer = await blob.arrayBuffer();
+  let binary = '';
+  const bytes = new Uint8Array(buffer);
+  const chunkSize = 0x8000;
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunkSize));
+  }
+  return btoa(binary);
+}
+
+async function githubGetFile(path) {
+  const { owner, repo, branch, token } = getGitHubSettings();
+  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${branch}`, {
+    headers: token
+      ? { Authorization: `token ${token}`, Accept: 'application/vnd.github+json' }
+      : { Accept: 'application/vnd.github+json' }
+  });
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(`GitHub error ${res.status} reading ${path}`);
+  const data = await res.json();
+  const content = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))));
+  return { sha: data.sha, content };
+}
+
+async function githubPutFile(path, base64Content, sha) {
+  const { owner, repo, branch, token } = getGitHubSettings();
+  const body = { message: `Update ${path} via Content Studio`, content: base64Content, branch };
+  if (sha) body.sha = sha;
+  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+    method: 'PUT',
+    headers: {
+      Authorization: `token ${token}`,
+      Accept: 'application/vnd.github+json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  });
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(`GitHub error ${res.status}: ${errText.slice(0, 200)}`);
+  }
+  return res.json();
+}
+
+async function publishJSONFile(path, obj) {
+  const existing = await githubGetFile(path).catch(() => null);
+  const content = utf8ToBase64(JSON.stringify(obj, null, 2));
+  await githubPutFile(path, content, existing ? existing.sha : undefined);
+}
+
+async function publishBinaryFile(path, blob) {
+  const existing = await githubGetFile(path).catch(() => null);
+  const content = await blobToBase64(blob);
+  await githubPutFile(path, content, existing ? existing.sha : undefined);
+}
+
+/* ---------- Publish log ---------- */
+
+function log(msg) {
+  const box = el('publishLog');
+  box.textContent += (box.textContent ? '\n' : '') + msg;
+  box.scrollTop = box.scrollHeight;
+}
+
+function logClear() {
+  el('publishLog').textContent = '';
+}
+
+async function publishAll() {
+  if (!isGitHubConfigured()) {
+    alert('Set up your GitHub connection first (top of the page).');
+    return;
+  }
+  el('publishBtn').disabled = true;
+  logClear();
+  log('Starting publish…');
+  try {
+    if (dataDirty.sentences) {
+      log('Uploading data/sentences.json…');
+      await publishJSONFile('data/sentences.json', sentencesData);
+      log('✓ data/sentences.json updated');
+      dataDirty.sentences = false;
+    }
+    if (dataDirty.dictionary) {
+      log('Uploading data/dictionary.json…');
+      await publishJSONFile('data/dictionary.json', dictionaryData);
+      log('✓ data/dictionary.json updated');
+      dataDirty.dictionary = false;
+    }
+    const ids = Object.keys(pendingAudio);
+    for (const id of ids) {
+      const { blob, ext } = pendingAudio[id];
+      log(`Uploading audio/${id}.${ext}…`);
+      await publishBinaryFile(`audio/${id}.${ext}`, blob);
+      log(`✓ audio/${id}.${ext} uploaded`);
+      delete pendingAudio[id];
+    }
+    log('All done! Your live site will reflect this within about a minute.');
+  } catch (err) {
+    log(`✗ ${err.message}`);
+  } finally {
+    refreshPreview();
+    el('publishBtn').disabled = !isGitHubConfigured();
+  }
+}
+
+/* ---------- Data loading ---------- */
+
 async function loadData() {
   try {
     const [sRes, dRes] = await Promise.all([
-      fetch('data/sentences.json'),
-      fetch('data/dictionary.json')
+      fetch('data/sentences.json', { cache: 'no-store' }),
+      fetch('data/dictionary.json', { cache: 'no-store' })
     ]);
     sentencesData = await sRes.json();
     dictionaryData = await dRes.json();
@@ -53,9 +219,11 @@ async function loadData() {
 
 function refreshLessonSelect() {
   const sel = el('lessonSelect');
+  const current = sel.value;
   sel.innerHTML = sentencesData.lessons.map(l =>
     `<option value="${l.id}">${l.title} (${l.id})</option>`
   ).join('') + `<option value="__new__">+ New lesson…</option>`;
+  if ([...sel.options].some(o => o.value === current)) sel.value = current;
   toggleNewLessonFields();
 }
 
@@ -83,6 +251,7 @@ async function startRecording() {
     recordedUrl = URL.createObjectURL(recordedBlob);
     el('recPlayback').src = recordedUrl;
     el('recPlaybackWrap').style.display = 'flex';
+    el('useRecBtn').textContent = '✓ Use this recording';
     mediaStream.getTracks().forEach(t => t.stop());
   };
   mediaRecorder.start();
@@ -120,10 +289,17 @@ function deleteRecording() {
   el('recTimer').textContent = '00:00';
 }
 
-function downloadRecording() {
+function useRecording() {
   if (!recordedBlob) { alert('Record something first.'); return; }
   const id = el('sentenceId').value.trim();
-  if (!id) { alert('Type a sentence ID first (e.g. l01-s04) so the audio file is named correctly.'); return; }
+  if (!id) { alert('Type a Sentence ID first (e.g. l01-s04) so the recording is linked to the right sentence.'); return; }
+  pendingAudio[id] = { blob: recordedBlob, ext: extFromMimeType(recordedMimeType) };
+  el('recStatus').textContent = `Audio ready for "${id}" — will be published when you tap "Add sentence" then "Publish".`;
+}
+
+function downloadRecording() {
+  if (!recordedBlob) { alert('Record something first.'); return; }
+  const id = el('sentenceId').value.trim() || 'recording';
   const ext = extFromMimeType(recordedMimeType);
   const a = document.createElement('a');
   a.href = recordedUrl;
@@ -158,15 +334,22 @@ function addSentence() {
       alert('Please fill in the new lesson ID and title.');
       return;
     }
-    lesson = { id: newId, title: newTitle, titleZh: newTitleZh, sentences: [] };
-    sentencesData.lessons.push(lesson);
+    lesson = sentencesData.lessons.find(l => l.id === newId);
+    if (!lesson) {
+      lesson = { id: newId, title: newTitle, titleZh: newTitleZh, sentences: [] };
+      sentencesData.lessons.push(lesson);
+    }
     lessonId = newId;
   } else {
     lesson = sentencesData.lessons.find(l => l.id === lessonId);
   }
 
-  const entry = { id, en, zh, audio: `audio/${id}.${extFromMimeType(recordedMimeType)}`, words };
   const existingIdx = lesson.sentences.findIndex(s => s.id === id);
+  const audioPath = pendingAudio[id]
+    ? `audio/${id}.${pendingAudio[id].ext}`
+    : (existingIdx >= 0 ? lesson.sentences[existingIdx].audio : `audio/${id}.webm`);
+
+  const entry = { id, en, zh, audio: audioPath, words };
   if (existingIdx >= 0) {
     lesson.sentences[existingIdx] = entry;
   } else {
@@ -189,7 +372,33 @@ function clearSentenceForm() {
   el('newLessonId').value = '';
   el('newLessonTitle').value = '';
   el('newLessonTitleZh').value = '';
+  el('recStatus').textContent = '';
+  el('useRecBtn').textContent = '✓ Use this recording';
   deleteRecording();
+}
+
+function editSentence(lessonId, sentenceId) {
+  const lesson = sentencesData.lessons.find(l => l.id === lessonId);
+  if (!lesson) return;
+  const s = lesson.sentences.find(x => x.id === sentenceId);
+  if (!s) return;
+  el('lessonSelect').value = lessonId;
+  toggleNewLessonFields();
+  el('sentenceId').value = s.id;
+  el('sentenceEn').value = s.en;
+  el('sentenceZh').value = s.zh;
+  el('sentenceWords').value = (s.words || []).join(', ');
+  el('recStatus').textContent = 'Editing existing sentence. Leave audio as-is, or record a new take and tap "Use this recording" to replace it.';
+  window.scrollTo({ top: el('panel-sentence').offsetTop - 20, behavior: 'smooth' });
+}
+
+function deleteSentence(lessonId, sentenceId) {
+  const lesson = sentencesData.lessons.find(l => l.id === lessonId);
+  if (!lesson) return;
+  if (!confirm(`Delete sentence "${sentenceId}"? This won't delete its audio file from GitHub, only remove it from the lesson.`)) return;
+  lesson.sentences = lesson.sentences.filter(s => s.id !== sentenceId);
+  dataDirty.sentences = true;
+  refreshPreview();
 }
 
 /* ---------- Dictionary form ---------- */
@@ -210,16 +419,74 @@ function addDictionaryWord() {
   refreshPreview();
 }
 
-/* ---------- Preview + export ---------- */
+function editDictionaryWord(word) {
+  const entry = dictionaryData[word];
+  if (!entry) return;
+  el('dictWord').value = word;
+  el('dictZh').value = entry.zh || '';
+  el('dictNote').value = entry.note || '';
+  window.scrollTo({ top: el('panel-dictionary').offsetTop - 20, behavior: 'smooth' });
+}
+
+function deleteDictionaryWord(word) {
+  if (!confirm(`Delete "${word}" from the dictionary?`)) return;
+  delete dictionaryData[word];
+  dataDirty.dictionary = true;
+  refreshPreview();
+}
+
+/* ---------- Preview / lists ---------- */
 
 function refreshPreview() {
-  el('sentenceCount').textContent = sentencesData.lessons.reduce((sum, l) => sum + l.sentences.length, 0);
+  const totalSentences = sentencesData.lessons.reduce((sum, l) => sum + l.sentences.length, 0);
+  el('sentenceCount').textContent = totalSentences;
   el('lessonCount').textContent = sentencesData.lessons.length;
   el('dictCount').textContent = Object.keys(dictionaryData).length;
-  el('sentencesOutput').textContent = JSON.stringify(sentencesData, null, 2);
-  el('dictionaryOutput').textContent = JSON.stringify(dictionaryData, null, 2);
+
+  el('sentenceList').innerHTML = sentencesData.lessons.map(lesson => `
+    <details class="lesson-group" open>
+      <summary>${lesson.title} <span class="hint">(${lesson.id} · ${lesson.sentences.length} lines)</span></summary>
+      ${lesson.sentences.map(s => `
+        <div class="list-item">
+          <div>
+            <div class="li-en">${escapeHtml(s.en)}</div>
+            <div class="li-zh">${escapeHtml(s.zh)} <span class="hint">· ${s.id}</span></div>
+          </div>
+          <div class="list-actions">
+            <button class="btn btn-secondary btn-small" onclick="editSentence('${lesson.id}','${s.id}')">Edit</button>
+            <button class="btn btn-danger btn-small" onclick="deleteSentence('${lesson.id}','${s.id}')">Delete</button>
+          </div>
+        </div>
+      `).join('') || '<p class="hint">No sentences yet.</p>'}
+    </details>
+  `).join('') || '<p class="hint">No lessons yet — add your first sentence above.</p>';
+
+  const words = Object.keys(dictionaryData).sort();
+  el('dictionaryList').innerHTML = words.map(w => `
+    <div class="list-item">
+      <div>
+        <div class="li-en">${escapeHtml(w)}</div>
+        <div class="li-zh">${escapeHtml(dictionaryData[w].zh || '')}</div>
+      </div>
+      <div class="list-actions">
+        <button class="btn btn-secondary btn-small" onclick="editDictionaryWord('${w.replace(/'/g, "\\'")}')">Edit</button>
+        <button class="btn btn-danger btn-small" onclick="deleteDictionaryWord('${w.replace(/'/g, "\\'")}')">Delete</button>
+      </div>
+    </div>
+  `).join('') || '<p class="hint">No dictionary words yet.</p>';
+
   el('downloadSentencesBtn').disabled = !dataDirty.sentences;
   el('downloadDictionaryBtn').disabled = !dataDirty.dictionary;
+
+  const pendingCount = Object.keys(pendingAudio).length;
+  el('publishSummary').textContent =
+    `Pending: ${dataDirty.sentences ? 'sentences.json changed, ' : ''}${dataDirty.dictionary ? 'dictionary.json changed, ' : ''}${pendingCount} audio file(s) waiting to upload.`;
+}
+
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, ch => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[ch]));
 }
 
 function downloadJSON(obj, filename) {
@@ -246,12 +513,17 @@ function showTab(name) {
 /* ---------- Init ---------- */
 
 window.addEventListener('DOMContentLoaded', () => {
+  loadGitHubSettingsIntoForm();
   loadData();
+  el('saveGhBtn').addEventListener('click', saveGitHubSettings);
+  el('forgetGhBtn').addEventListener('click', forgetGitHubSettings);
+  el('publishBtn').addEventListener('click', publishAll);
   el('lessonSelect').addEventListener('change', toggleNewLessonFields);
   el('startRecBtn').addEventListener('click', startRecording);
   el('stopRecBtn').addEventListener('click', stopRecording);
   el('reRecordBtn').addEventListener('click', reRecord);
   el('deleteRecBtn').addEventListener('click', deleteRecording);
+  el('useRecBtn').addEventListener('click', useRecording);
   el('downloadRecBtn').addEventListener('click', downloadRecording);
   el('addSentenceBtn').addEventListener('click', addSentence);
   el('addDictWordBtn').addEventListener('click', addDictionaryWord);
