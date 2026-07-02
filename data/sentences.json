@@ -32,6 +32,78 @@
           "words": [
             "grand"
           ]
+        },
+        {
+          "id": "l01-s04",
+          "en": "Hi there, what can I get for you today?",
+          "zh": "你好，今天想喝点什么？",
+          "audio": "audio/l01-s04.webm",
+          "words": [
+            "what can i get for you"
+          ]
+        },
+        {
+          "id": "l01-s05",
+          "en": "What sizes do you do?",
+          "zh": "你们有哪些杯型？",
+          "audio": "audio/l01-s05.webm",
+          "words": [
+            "sizes"
+          ]
+        },
+        {
+          "id": "l01-s06",
+          "en": "I'll have a medium latte, please.",
+          "zh": "我要一杯中杯拿铁，谢谢",
+          "audio": "audio/l01-s06.webm",
+          "words": [
+            "medium"
+          ]
+        },
+        {
+          "id": "l01-s07",
+          "en": "Could I get it decaf, please?",
+          "zh": "可以帮我做成低咖啡因的吗？",
+          "audio": "audio/l01-s07.webm",
+          "words": [
+            "decaf"
+          ]
+        },
+        {
+          "id": "l01-s08",
+          "en": "Could I get an extra shot of espresso?",
+          "zh": "可以加一份浓缩咖啡吗？",
+          "audio": "audio/l01-s08.webm",
+          "words": [
+            "extra shot"
+          ]
+        },
+        {
+          "id": "l01-s09",
+          "en": "No sugar for me, thanks.",
+          "zh": "我不要加糖，谢谢。",
+          "audio": "audio/l01-s09.webm",
+          "words": [
+            "no sugar"
+          ]
+        },
+        {
+          "id": "l01-s10",
+          "en": "Do you do almond milk as well?",
+          "zh": "你们也有杏仁奶吗？",
+          "audio": "audio/l01-s10.webm",
+          "words": [
+            "almond milk"
+          ]
+        },
+        {
+          "id": "l01-s11",
+          "en": "Sorry, I'm actually allergic to nuts — is that safe?",
+          "zh": "不好意思，我对坚果过敏——这个安全吗？",
+          "audio": "audio/l01-s11.webm",
+          "words": [
+            "allergic"
+          ]
         }
       ]
     },
@@ -85,6 +157,13 @@
           "words": [
             "a bit of a state"
           ]
+        },
+        {
+          "id": "l01-s04",
+          "en": "Hi there, what can I get for you today?",
+          "zh": "你好，今天想喝点什么？",
+          "audio": "audio/l01-s04.webm",
+          "words": []
         }
       ]
     }
