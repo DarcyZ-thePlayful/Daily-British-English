@@ -42,5 +42,37 @@
   "a bit of a state": {
     "zh": "有点乱 / 一团糟",
     "note": "Informal way of saying something is messy or in poor condition."
+  },
+  "sizes": {
+    "zh": "尺寸/杯型",
+    "note": "Drink size options"
+  },
+  "medium": {
+    "zh": "中杯/中号",
+    "note": "UK cafés: small/medium/large or regular/large"
+  },
+  "decaf": {
+    "zh": "低咖啡因的",
+    "note": "Short for \"decaffeinated\""
+  },
+  "what can i get for you": {
+    "zh": "需要点什么",
+    "note": "Friendly way to ask for an order"
+  },
+  "extra shot": {
+    "zh": "加一份浓缩",
+    "note": "Adds one shot of espresso"
+  },
+  "no sugar": {
+    "zh": "不加糖",
+    "note": "Common way to decline sugar"
+  },
+  "almond milk": {
+    "zh": "杏仁奶",
+    "note": "Dairy-free milk alternative"
+  },
+  "allergic": {
+    "zh": "过敏的",
+    "note": "Used for food allergies"
   }
 }
