@@ -331,3 +331,36 @@ pre.output {
   background: var(--card); cursor: pointer; color: var(--ink-soft);
 }
 .tab-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+.status-ok { color: var(--accent-dark); font-weight: 600; }
+
+.btn-small { padding: 0.35rem 0.7rem; font-size: 0.82rem; }
+
+.lesson-group {
+  border: 1px solid rgba(32,42,60,0.1);
+  border-radius: 8px;
+  margin-bottom: 0.7rem;
+  padding: 0.7rem 0.9rem;
+}
+
+.lesson-group summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Fraunces', serif;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.6rem 0;
+  border-top: 1px solid rgba(32,42,60,0.07);
+}
+
+.list-item:first-of-type { border-top: none; }
+
+.li-en { font-family: 'Fraunces', serif; font-size: 0.98rem; }
+.li-zh { color: var(--ink-soft); font-size: 0.86rem; margin-top: 0.15rem; }
+
+.list-actions { display: flex; gap: 0.4rem; flex-shrink: 0; }
