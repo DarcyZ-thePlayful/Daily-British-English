@@ -5,11 +5,35 @@ let mediaStream = null;
 let audioChunks = [];
 let recordedBlob = null;
 let recordedUrl = null;
+let recordedMimeType = '';
 let timerInterval = null;
 let recordStart = null;
 let dataDirty = { sentences: false, dictionary: false };
 
 const el = (id) => document.getElementById(id);
+
+function getSupportedMimeType() {
+  const candidates = [
+    'audio/webm;codecs=opus',
+    'audio/webm',
+    'audio/mp4',
+    'audio/mp4;codecs=mp4a.40.2',
+    'audio/ogg;codecs=opus'
+  ];
+  for (const type of candidates) {
+    if (typeof MediaRecorder !== 'undefined' && MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(type)) {
+      return type;
+    }
+  }
+  return '';
+}
+
+function extFromMimeType(mime) {
+  if (!mime) return 'webm';
+  if (mime.includes('mp4')) return 'm4a';
+  if (mime.includes('ogg')) return 'ogg';
+  return 'webm';
+}
 
 async function loadData() {
   try {
@@ -50,10 +74,12 @@ async function startRecording() {
     return;
   }
   audioChunks = [];
-  mediaRecorder = new MediaRecorder(mediaStream);
+  const mimeType = getSupportedMimeType();
+  mediaRecorder = mimeType ? new MediaRecorder(mediaStream, { mimeType }) : new MediaRecorder(mediaStream);
   mediaRecorder.ondataavailable = (e) => audioChunks.push(e.data);
   mediaRecorder.onstop = () => {
-    recordedBlob = new Blob(audioChunks, { type: 'audio/webm' });
+    recordedMimeType = mediaRecorder.mimeType || mimeType || 'audio/webm';
+    recordedBlob = new Blob(audioChunks, { type: recordedMimeType });
     recordedUrl = URL.createObjectURL(recordedBlob);
     el('recPlayback').src = recordedUrl;
     el('recPlaybackWrap').style.display = 'flex';
@@ -98,9 +124,10 @@ function downloadRecording() {
   if (!recordedBlob) { alert('Record something first.'); return; }
   const id = el('sentenceId').value.trim();
   if (!id) { alert('Type a sentence ID first (e.g. l01-s04) so the audio file is named correctly.'); return; }
+  const ext = extFromMimeType(recordedMimeType);
   const a = document.createElement('a');
   a.href = recordedUrl;
-  a.download = `${id}.webm`;
+  a.download = `${id}.${ext}`;
   document.body.appendChild(a);
   a.click();
   a.remove();
@@ -138,7 +165,7 @@ function addSentence() {
     lesson = sentencesData.lessons.find(l => l.id === lessonId);
   }
 
-  const entry = { id, en, zh, audio: `audio/${id}.webm`, words };
+  const entry = { id, en, zh, audio: `audio/${id}.${extFromMimeType(recordedMimeType)}`, words };
   const existingIdx = lesson.sentences.findIndex(s => s.id === id);
   if (existingIdx >= 0) {
     lesson.sentences[existingIdx] = entry;
