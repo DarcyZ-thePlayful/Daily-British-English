@@ -113,8 +113,7 @@ async function githubGetFile(path) {
   if (res.status === 404) return null;
   if (!res.ok) throw new Error(`GitHub error ${res.status} reading ${path}`);
   const data = await res.json();
-  const content = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))));
-  return { sha: data.sha, content };
+  return { sha: data.sha };
 }
 
 async function githubPutFile(path, base64Content, sha) {
