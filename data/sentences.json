@@ -618,6 +618,193 @@
           ]
         }
       ]
+    },
+    {
+      "id": "lesson-04",
+      "title": "Health & Emergencies",
+      "titleZh": "健康与急诊",
+      "sentences": [
+        {
+          "id": "l04-s01",
+          "en": "Excuse me, do you have anything for a sore throat?",
+          "zh": "请问有治喉咙痛的药吗？",
+          "audio": "audio/l04-s01.webm",
+          "words": [
+            "sore throat"
+          ]
+        },
+        {
+          "id": "l04-s02",
+          "en": "I've had a cold for a few days now.",
+          "zh": "我感冒好几天了。",
+          "audio": "audio/l04-s02.webm",
+          "words": [
+            "cold"
+          ]
+        },
+        {
+          "id": "l04-s03",
+          "en": "Take two tablets every four hours, as needed.",
+          "zh": "每四小时服两片，按需服用。",
+          "audio": "audio/l04-s03.webm",
+          "words": [
+            "as needed"
+          ]
+        },
+        {
+          "id": "l04-s04",
+          "en": "Is this safe to take on an empty stomach?",
+          "zh": "这个空腹吃安全吗？",
+          "audio": "audio/l04-s04.webm",
+          "words": [
+            "empty stomach"
+          ]
+        },
+        {
+          "id": "l04-s05",
+          "en": "I'd like to register with a GP surgery, please.",
+          "zh": "我想登记一个全科诊所，谢谢。",
+          "audio": "audio/l04-s05.webm",
+          "words": [
+            "GP surgery"
+          ]
+        },
+        {
+          "id": "l04-s06",
+          "en": "Could I book an appointment for sometime this week?",
+          "zh": "我可以预约这周的某个时间吗？",
+          "audio": "audio/l04-s06.webm",
+          "words": [
+            "book an appointment"
+          ]
+        },
+        {
+          "id": "l04-s07",
+          "en": "What seems to be the problem today?",
+          "zh": "今天哪里不舒服？",
+          "audio": "audio/l04-s07.webm",
+          "words": [
+            "what seems to be the problem"
+          ]
+        },
+        {
+          "id": "l04-s08",
+          "en": "I've been feeling a bit off since yesterday.",
+          "zh": "我从昨天起就感觉有点不舒服。",
+          "audio": "audio/l04-s08.webm",
+          "words": [
+            "a bit off"
+          ]
+        },
+        {
+          "id": "l04-s09",
+          "en": "It hurts when I press here.",
+          "zh": "我按这里会疼。",
+          "audio": "audio/l04-s09.webm",
+          "words": [
+            "it hurts"
+          ]
+        },
+        {
+          "id": "l04-s10",
+          "en": "I'll write you a prescription for that.",
+          "zh": "我给你开个处方。",
+          "audio": "audio/l04-s10.webm",
+          "words": [
+            "prescription"
+          ]
+        },
+        {
+          "id": "l04-s11",
+          "en": "You can pick it up from the pharmacy downstairs.",
+          "zh": "你可以在楼下药房取药。",
+          "audio": "audio/l04-s11.webm",
+          "words": [
+            "pick up"
+          ]
+        },
+        {
+          "id": "l04-s12",
+          "en": "If it doesn't clear up in a few days, come back and see me.",
+          "zh": "如果几天内没好转，再回来找我。",
+          "audio": "audio/l04-s12.webm",
+          "words": [
+            "clear up"
+          ]
+        },
+        {
+          "id": "l04-s13",
+          "en": "Should I call 111 or go straight to A&E?",
+          "zh": "我该打111还是直接去急诊？",
+          "audio": "audio/l04-s13.webm",
+          "words": [
+            "A&E"
+          ]
+        },
+        {
+          "id": "l04-s14",
+          "en": "It's not life-threatening, but I'd rather get it checked.",
+          "zh": "不是致命的，但我想去检查一下。",
+          "audio": "audio/l04-s14.webm",
+          "words": [
+            "life-threatening"
+          ]
+        },
+        {
+          "id": "l04-s15",
+          "en": "Call 999, it's an emergency!",
+          "zh": "打999，这是紧急情况！",
+          "audio": "audio/l04-s15.webm",
+          "words": [
+            "999"
+          ]
+        },
+        {
+          "id": "l04-s16",
+          "en": "Stay on the line, an ambulance is on its way.",
+          "zh": "别挂电话，救护车正在赶来。",
+          "audio": "audio/l04-s16.webm",
+          "words": [
+            "on its way"
+          ]
+        },
+        {
+          "id": "l04-s17",
+          "en": "I'm feeling really dizzy all of a sudden.",
+          "zh": "我突然感觉很晕。",
+          "audio": "audio/l04-s17.webm",
+          "words": [
+            "all of a sudden"
+          ]
+        },
+        {
+          "id": "l04-s18",
+          "en": "Try to stay calm, help is coming.",
+          "zh": "尽量保持冷静，救援马上就到。",
+          "audio": "audio/l04-s18.webm",
+          "words": [
+            "stay calm"
+          ]
+        },
+        {
+          "id": "l04-s19",
+          "en": "I need to call in sick for uni today.",
+          "zh": "我今天需要请病假不去上课。",
+          "audio": "audio/l04-s19.webm",
+          "words": [
+            "call in sick"
+          ]
+        },
+        {
+          "id": "l04-s20",
+          "en": "Get well soon!",
+          "zh": "早日康复！",
+          "audio": "audio/l04-s20.webm",
+          "words": [
+            "get well soon"
+          ]
+        }
+      ]
     }
   ]
 }

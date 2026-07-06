@@ -278,5 +278,85 @@
   "ever so much": {
     "zh": "非常/十分",
     "note": "British intensifier often paired with 'thanks', e.g. 'thanks ever so much'"
+  },
+  "sore throat": {
+    "zh": "喉咙痛",
+    "note": "Common minor ailment asked about at a pharmacy"
+  },
+  "cold": {
+    "zh": "感冒",
+    "note": "Common illness, distinct from 'flu' which is more severe"
+  },
+  "as needed": {
+    "zh": "按需",
+    "note": "Take medicine only when the symptom occurs, not on a fixed schedule"
+  },
+  "empty stomach": {
+    "zh": "空腹",
+    "note": "Without having eaten; relevant for medicine instructions"
+  },
+  "GP surgery": {
+    "zh": "全科诊所",
+    "note": "British term for a local doctor's practice/clinic"
+  },
+  "book an appointment": {
+    "zh": "预约",
+    "note": "To schedule a time to see a doctor"
+  },
+  "what seems to be the problem": {
+    "zh": "哪里不舒服",
+    "note": "Standard doctor's opening question"
+  },
+  "a bit off": {
+    "zh": "有点不舒服",
+    "note": "Mild, informal way to describe feeling unwell"
+  },
+  "it hurts": {
+    "zh": "疼",
+    "note": "Used to describe pain when pointing to a spot"
+  },
+  "prescription": {
+    "zh": "处方",
+    "note": "A doctor's written authorisation for medicine"
+  },
+  "pick up": {
+    "zh": "取（药）",
+    "note": "To collect something, e.g. a prescription from the pharmacy"
+  },
+  "clear up": {
+    "zh": "好转/痊愈",
+    "note": "For symptoms or an illness to resolve"
+  },
+  "A&E": {
+    "zh": "急诊科",
+    "note": "Accident & Emergency — the UK term for the ER"
+  },
+  "life-threatening": {
+    "zh": "危及生命的",
+    "note": "Describes a serious, urgent medical condition"
+  },
+  "999": {
+    "zh": "999（英国紧急电话）",
+    "note": "UK emergency number for police, fire, or ambulance"
+  },
+  "on its way": {
+    "zh": "正在赶来",
+    "note": "Something (e.g. help) is currently travelling towards you"
+  },
+  "all of a sudden": {
+    "zh": "突然",
+    "note": "Describes something happening unexpectedly and quickly"
+  },
+  "stay calm": {
+    "zh": "保持冷静",
+    "note": "Common reassurance during a stressful or urgent situation"
+  },
+  "call in sick": {
+    "zh": "请病假",
+    "note": "To notify someone you won't attend due to illness"
+  },
+  "get well soon": {
+    "zh": "早日康复",
+    "note": "Common well-wish said to someone who is ill"
   }
 }
