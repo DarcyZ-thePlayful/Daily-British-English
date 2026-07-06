@@ -76,8 +76,8 @@
     "note": "Used for food allergies"
   },
   "grab": {
-    "zh": "顺便拿/要",
-    "note": "Casual for \"get/take\""
+    "zh": "Casual for \"get/take\"",
+    "note": "顺便拿/要"
   },
   "for here": {
     "zh": "在这里用",
@@ -85,38 +85,6 @@
   },
   "to go": {
     "zh": "带走",
-    "note": "Also \"takeaway\""
-  },
-  "cash only": {
-    "zh": "只收现金",
-    "note": "No card payment accepted - common for Chinese takeaways/small family business"
-  },
-  "contactless": {
-    "zh": "非接触支付",
-    "note": "Tap-to-pay by card or phone"
-  },
-  "altogether": {
-    "zh": "总共",
-    "note": "Total price"
-  },
-  "pop": {
-    "zh": "放/摆",
-    "note": "Casual \"put\" — very British"
-  },
-  "give us": {
-    "zh": "给我们",
-    "note": "Informal \"give me/us\" — common in service settings"
-  },
-  "wrong order": {
-    "zh": "点错了/送错餐了",
-    "note": "When the order doesn't match"
-  },
-  "sort out": {
-    "zh": "处理好",
-    "note": "To fix/resolve a problem"
-  },
-  "have a good one": {
-    "zh": "祝你愉快",
-    "note": "Casual farewell"
+    "note": "UK also says \"takeaway\""
   }
 }
