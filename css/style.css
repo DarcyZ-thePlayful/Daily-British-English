@@ -363,4 +363,14 @@ pre.output {
 .li-en { font-family: 'Fraunces', serif; font-size: 0.98rem; }
 .li-zh { color: var(--ink-soft); font-size: 0.86rem; margin-top: 0.15rem; }
 
-.list-actions { display: flex; gap: 0.4rem; flex-shrink: 0; }
+.list-actions { display: flex; gap: 0.4rem; flex-shrink: 0; align-items: center; }
+
+.recorder-inline {
+  margin: 0.5rem 0 0.8rem;
+  box-shadow: none;
+  border: 1px dashed var(--accent);
+  background: rgba(62,124,116,0.05);
+}
+
+.recorder-inline h2,
+.recorder-inline #recGenericHint { display: none; }

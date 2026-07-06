@@ -12,6 +12,7 @@ let dataDirty = { sentences: false, dictionary: false };
 let pendingAudio = {}; // sentenceId -> { blob, ext }
 let activeRecordingContext = null; // { lessonId, sentenceId }
 const recentlyPublishedAudio = new Set(); // sentenceId -> uploaded this session
+const expandedLessons = new Set(); // lessonId -> currently expanded in "Your lessons"
 
 const el = (id) => document.getElementById(id);
 
@@ -292,7 +293,7 @@ function deleteRecording() {
 
 function useRecording() {
   if (!recordedBlob) { alert('Record something first.'); return; }
-  const id = el('sentenceId').value.trim();
+  const id = getTargetSentenceId();
   if (!id) { alert('Type a Sentence ID first (e.g. l01-s04) so the recording is linked to the right sentence.'); return; }
   pendingAudio[id] = { blob: recordedBlob, ext: extFromMimeType(recordedMimeType) };
   el('recStatus').textContent = `Audio ready for "${id}" — will be published when you tap "Add sentence" then "Publish".`;
@@ -300,7 +301,7 @@ function useRecording() {
 
 function downloadRecording() {
   if (!recordedBlob) { alert('Record something first.'); return; }
-  const id = el('sentenceId').value.trim() || 'recording';
+  const id = getTargetSentenceId() || 'recording';
   const ext = extFromMimeType(recordedMimeType);
   const a = document.createElement('a');
   a.href = recordedUrl;
@@ -310,19 +311,65 @@ function downloadRecording() {
   a.remove();
 }
 
+function getTargetSentenceId() {
+  return (activeRecordingContext && activeRecordingContext.sentenceId) || el('sentenceId').value.trim();
+}
+
+function detachRecorderPanel() {
+  const anchor = el('recordSectionAnchor');
+  const panel = el('recordSection');
+  anchor.insertAdjacentElement('beforebegin', panel);
+}
+
+function attachRecorderPanel() {
+  if (!activeRecordingContext) return;
+  const target = document.querySelector(`.list-item[data-sentence-id="${activeRecordingContext.sentenceId}"]`);
+  if (target) {
+    target.insertAdjacentElement('afterend', el('recordSection'));
+  } else {
+    // the sentence this recorder was open for no longer exists (e.g. deleted)
+    activeRecordingContext = null;
+    el('recordSection').classList.remove('recorder-inline');
+    el('recTargetHint').style.display = 'none';
+  }
+}
+
 function openRecorderForSentence(lessonId, sentenceId) {
+  if (mediaRecorder && mediaRecorder.state === 'recording') {
+    alert('请先停止当前录音，再切换到其他句子。');
+    return;
+  }
+  const isSameTarget = activeRecordingContext && activeRecordingContext.sentenceId === sentenceId;
+  if (recordedBlob && !confirm(isSameTarget ? '关闭录音区会丢弃当前未发布的录音，确定吗？' : '切换到其他句子会丢弃当前未发布的录音，确定吗？')) {
+    return;
+  }
+  if (isSameTarget) {
+    closeInlineRecorder();
+    return;
+  }
   activeRecordingContext = { lessonId, sentenceId };
+  expandedLessons.add(lessonId);
   el('sentenceId').value = sentenceId;
   deleteRecording();
   el('recStatus').textContent = '';
   el('recTargetHint').textContent = `🎤 正在为 "${sentenceId}" 录音 — 录完后点击"保存并发布这段录音"直接上传到 GitHub。`;
   el('recTargetHint').style.display = 'block';
-  window.scrollTo({ top: el('recordSection').offsetTop - 20, behavior: 'smooth' });
+  el('recordSection').classList.add('recorder-inline');
+  refreshPreview();
+  el('recordSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function closeInlineRecorder() {
+  activeRecordingContext = null;
+  el('recordSection').classList.remove('recorder-inline');
+  el('recTargetHint').style.display = 'none';
+  deleteRecording();
+  refreshPreview();
 }
 
 async function saveAndPublishRecording() {
   if (!recordedBlob) { alert('请先录音。'); return; }
-  const id = el('sentenceId').value.trim();
+  const id = getTargetSentenceId();
   if (!id) { alert('请先输入或选择 Sentence ID。'); return; }
   if (!isGitHubConfigured()) { alert('请先在页面顶部设置 GitHub 连接。'); return; }
 
@@ -414,8 +461,10 @@ function clearSentenceForm() {
   el('recStatus').textContent = '';
   el('useRecBtn').textContent = '✓ Use this recording';
   el('recTargetHint').style.display = 'none';
+  el('recordSection').classList.remove('recorder-inline');
   activeRecordingContext = null;
   deleteRecording();
+  refreshPreview();
 }
 
 function editSentence(lessonId, sentenceId) {
@@ -484,25 +533,32 @@ function refreshPreview() {
   el('lessonCount').textContent = sentencesData.lessons.length;
   el('dictCount').textContent = Object.keys(dictionaryData).length;
 
+  detachRecorderPanel();
+
   el('sentenceList').innerHTML = sentencesData.lessons.map(lesson => `
-    <details class="lesson-group" open>
+    <details class="lesson-group" data-lesson-id="${lesson.id}" ${expandedLessons.has(lesson.id) ? 'open' : ''}>
       <summary>${lesson.title} <span class="hint">(${lesson.id} · ${lesson.sentences.length} lines)</span></summary>
-      ${lesson.sentences.map(s => `
-        <div class="list-item">
+      ${lesson.sentences.map(s => {
+        const isActive = activeRecordingContext && activeRecordingContext.sentenceId === s.id;
+        return `
+        <div class="list-item" data-sentence-id="${s.id}">
           <div>
             <div class="li-en">${escapeHtml(s.en)}</div>
             <div class="li-zh">${escapeHtml(s.zh)} <span class="hint">· ${s.id}</span></div>
           </div>
           <div class="list-actions">
             <button class="btn btn-secondary btn-small" onclick="editSentence('${lesson.id}','${s.id}')">Edit</button>
-            <button class="btn btn-secondary btn-small" onclick="openRecorderForSentence('${lesson.id}','${s.id}')">🎤 录音</button>
+            <button class="btn ${isActive ? 'btn-primary' : 'btn-secondary'} btn-small" onclick="openRecorderForSentence('${lesson.id}','${s.id}')">${isActive ? '🎤 收起' : '🎤 录音'}</button>
             <button class="btn btn-danger btn-small" onclick="deleteSentence('${lesson.id}','${s.id}')">Delete</button>
             ${recentlyPublishedAudio.has(s.id) ? '<span class="hint status-ok">✓ 已录音</span>' : ''}
           </div>
         </div>
-      `).join('') || '<p class="hint">No sentences yet.</p>'}
+      `;
+      }).join('') || '<p class="hint">No sentences yet.</p>'}
     </details>
   `).join('') || '<p class="hint">No lessons yet — add your first sentence above.</p>';
+
+  attachRecorderPanel();
 
   const words = Object.keys(dictionaryData).sort();
   el('dictionaryList').innerHTML = words.map(w => `
@@ -575,4 +631,13 @@ window.addEventListener('DOMContentLoaded', () => {
   el('downloadDictionaryBtn').addEventListener('click', () => downloadJSON(dictionaryData, 'dictionary.json'));
   el('tab-sentence').addEventListener('click', () => showTab('sentence'));
   el('tab-dictionary').addEventListener('click', () => showTab('dictionary'));
+  // 'toggle' doesn't bubble, so this must be registered with capture:true to observe it via delegation
+  el('sentenceList').addEventListener('toggle', (e) => {
+    const details = e.target;
+    if (details.tagName !== 'DETAILS') return;
+    const lessonId = details.dataset.lessonId;
+    if (!lessonId) return;
+    if (details.open) expandedLessons.add(lessonId);
+    else expandedLessons.delete(lessonId);
+  }, true);
 });
