@@ -230,6 +230,186 @@
             "round the corner",
             "you can't miss it"
           ]
+        },
+        {
+          "id": "l02-s03",
+          "en": "Sorry to bother you, do you know the way to the library?",
+          "zh": "不好意思打扰一下，你知道去图书馆怎么走吗？",
+          "audio": "audio/l02-s03.webm",
+          "words": [
+            "sorry to bother you"
+          ]
+        },
+        {
+          "id": "l02-s04",
+          "en": "Just carry on straight down this road.",
+          "zh": "沿着这条路一直走就行。",
+          "audio": "audio/l02-s04.webm",
+          "words": [
+            "carry on"
+          ]
+        },
+        {
+          "id": "l02-s05",
+          "en": "Take the first left, then it's on your right.",
+          "zh": "第一个路口左转，然后就在你右手边。",
+          "audio": "audio/l02-s05.webm",
+          "words": [
+            "take the first left"
+          ]
+        },
+        {
+          "id": "l02-s06",
+          "en": "It's about a five-minute walk from here.",
+          "zh": "从这里走过去大约五分钟。",
+          "audio": "audio/l02-s06.webm",
+          "words": [
+            "five-minute walk"
+          ]
+        },
+        {
+          "id": "l02-s07",
+          "en": "You'll pass a big red postbox on the way.",
+          "zh": "路上你会经过一个大红色邮筒。",
+          "audio": "audio/l02-s07.webm",
+          "words": [
+            "postbox"
+          ]
+        },
+        {
+          "id": "l02-s08",
+          "en": "Is it within walking distance, or should I get the bus?",
+          "zh": "走路能到吗，还是我该坐公交？",
+          "audio": "audio/l02-s08.webm",
+          "words": [
+            "walking distance"
+          ]
+        },
+        {
+          "id": "l02-s09",
+          "en": "Which bus do I need to get into town?",
+          "zh": "我要坐哪路公交去市中心？",
+          "audio": "audio/l02-s09.webm",
+          "words": [
+            "get into town"
+          ]
+        },
+        {
+          "id": "l02-s10",
+          "en": "Hop on the number 12, it stops right outside.",
+          "zh": "坐12路车，它就停在门口。",
+          "audio": "audio/l02-s10.webm",
+          "words": [
+            "hop on"
+          ]
+        },
+        {
+          "id": "l02-s11",
+          "en": "Sorry, could you say that again? I'm not from round here.",
+          "zh": "不好意思，能再说一次吗？我不是本地人。",
+          "audio": "audio/l02-s11.webm",
+          "words": [
+            "not from round here"
+          ]
+        },
+        {
+          "id": "l02-s12",
+          "en": "No worries, I'll walk you through it.",
+          "zh": "没事，我一步步跟你说。",
+          "audio": "audio/l02-s12.webm",
+          "words": [
+            "walk you through"
+          ]
+        },
+        {
+          "id": "l02-s13",
+          "en": "Keep going till you hit the roundabout.",
+          "zh": "一直走到环岛那里。",
+          "audio": "audio/l02-s13.webm",
+          "words": [
+            "roundabout"
+          ]
+        },
+        {
+          "id": "l02-s14",
+          "en": "It's tucked just behind the newsagents.",
+          "zh": "就在报刊亭后面一点。",
+          "audio": "audio/l02-s14.webm",
+          "words": [
+            "tucked behind"
+          ]
+        },
+        {
+          "id": "l02-s15",
+          "en": "Am I heading the right way for the train station?",
+          "zh": "我这样走去火车站方向对吗？",
+          "audio": "audio/l02-s15.webm",
+          "words": [
+            "heading"
+          ]
+        },
+        {
+          "id": "l02-s16",
+          "en": "You're going the wrong way, it's back that way.",
+          "zh": "你走反了，是那个方向。",
+          "audio": "audio/l02-s16.webm",
+          "words": [
+            "the wrong way"
+          ]
+        },
+        {
+          "id": "l02-s17",
+          "en": "Cheers, I'll give it a go.",
+          "zh": "谢谢，我试试看。",
+          "audio": "audio/l02-s17.webm",
+          "words": [
+            "give it a go"
+          ]
+        },
+        {
+          "id": "l02-s18",
+          "en": "Is there a shortcut through the park?",
+          "zh": "穿过公园有近路吗？",
+          "audio": "audio/l02-s18.webm",
+          "words": [
+            "shortcut"
+          ]
+        },
+        {
+          "id": "l02-s19",
+          "en": "Yeah, cut through here and you'll save a few minutes.",
+          "zh": "对，从这里穿过去能省几分钟。",
+          "audio": "audio/l02-s19.webm",
+          "words": [
+            "cut through"
+          ]
+        },
+        {
+          "id": "l02-s20",
+          "en": "Sorry, I think I'm a bit lost.",
+          "zh": "不好意思，我好像有点迷路了。",
+          "audio": "audio/l02-s20.webm",
+          "words": [
+            "a bit lost"
+          ]
+        },
+        {
+          "id": "l02-s21",
+          "en": "No bother, where are you trying to get to?",
+          "zh": "没事，你想去哪里？",
+          "audio": "audio/l02-s21.webm",
+          "words": [
+            "no bother"
+          ]
+        },
+        {
+          "id": "l02-s22",
+          "en": "That's brilliant, thanks ever so much.",
+          "zh": "太好了，非常感谢。",
+          "audio": "audio/l02-s22.webm",
+          "words": [
+            "ever so much"
+          ]
         }
       ]
     },

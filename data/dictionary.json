@@ -198,5 +198,85 @@
   "pop a ticket in": {
     "zh": "提交一个报修单",
     "note": "Casual for submitting a maintenance request"
+  },
+  "sorry to bother you": {
+    "zh": "不好意思打扰一下",
+    "note": "Polite way to open a request to a stranger"
+  },
+  "carry on": {
+    "zh": "继续/一直走",
+    "note": "Keep going in the same direction"
+  },
+  "take the first left": {
+    "zh": "第一个路口左转",
+    "note": "Common direction-giving phrase"
+  },
+  "five-minute walk": {
+    "zh": "五分钟的步行路程",
+    "note": "Describes walking distance in time"
+  },
+  "postbox": {
+    "zh": "邮筒",
+    "note": "British term for a street mailbox, usually bright red"
+  },
+  "walking distance": {
+    "zh": "步行可到的距离",
+    "note": "Close enough to walk to"
+  },
+  "get into town": {
+    "zh": "去市中心",
+    "note": "'Town' often means the town/city centre in British English"
+  },
+  "hop on": {
+    "zh": "上车",
+    "note": "Casual way to say 'get on' a bus or train"
+  },
+  "not from round here": {
+    "zh": "不是本地人",
+    "note": "Explains unfamiliarity with the local area"
+  },
+  "walk you through": {
+    "zh": "详细说明/一步步讲解",
+    "note": "To explain something step by step"
+  },
+  "roundabout": {
+    "zh": "环岛",
+    "note": "Circular road junction, very common in the UK"
+  },
+  "tucked behind": {
+    "zh": "藏/位于...后面",
+    "note": "Describes something set back from the main view, slightly hidden"
+  },
+  "heading": {
+    "zh": "朝...方向走",
+    "note": "Moving in a particular direction"
+  },
+  "the wrong way": {
+    "zh": "走错方向",
+    "note": "Opposite of the correct direction"
+  },
+  "give it a go": {
+    "zh": "试一试",
+    "note": "Casual British phrase meaning 'try it'"
+  },
+  "shortcut": {
+    "zh": "近路/捷径",
+    "note": "A quicker route"
+  },
+  "cut through": {
+    "zh": "穿过/抄近路",
+    "note": "To pass through a place as a shortcut"
+  },
+  "a bit lost": {
+    "zh": "有点迷路",
+    "note": "Softened way of admitting you don't know where you are"
+  },
+  "no bother": {
+    "zh": "没关系/不麻烦",
+    "note": "Casual reassurance, similar to 'no problem'"
+  },
+  "ever so much": {
+    "zh": "非常/十分",
+    "note": "British intensifier often paired with 'thanks', e.g. 'thanks ever so much'"
   }
 }
