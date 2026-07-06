@@ -366,5 +366,85 @@
   "gp surgery": {
     "zh": "全科诊所",
     "note": "British term for a local doctor's practice/clinic"
+  },
+  "is this seat taken": {
+    "zh": "这个座位有人坐吗",
+    "note": "Polite way to check before sitting down in a lecture or seminar"
+  },
+  "didn't quite catch it": {
+    "zh": "没太听清",
+    "note": "Polite way to ask someone to repeat what they said"
+  },
+  "seminar": {
+    "zh": "研讨课",
+    "note": "Small-group discussion class, distinct from a lecture"
+  },
+  "stuck on": {
+    "zh": "卡在（某个问题上）",
+    "note": "Unable to progress past a particular point"
+  },
+  "office hours": {
+    "zh": "答疑时间",
+    "note": "Set times when a tutor/lecturer is available for questions"
+  },
+  "on the right track": {
+    "zh": "方向正确",
+    "note": "Making good progress in the right direction"
+  },
+  "deadline": {
+    "zh": "截止日期",
+    "note": "The date work must be submitted by"
+  },
+  "extension": {
+    "zh": "延期",
+    "note": "Extra time granted to submit work late"
+  },
+  "student portal": {
+    "zh": "学生系统",
+    "note": "The university's online system for grades, enrolment, etc."
+  },
+  "wifi": {
+    "zh": "无线网络",
+    "note": "Wireless internet, commonly needed across campus"
+  },
+  "print": {
+    "zh": "打印",
+    "note": "To produce a paper copy, often needed for essays/handouts"
+  },
+  "reserve": {
+    "zh": "预约",
+    "note": "To book something in advance, e.g. a study room"
+  },
+  "group project": {
+    "zh": "小组作业",
+    "note": "Coursework completed together with classmates"
+  },
+  "swap numbers": {
+    "zh": "交换电话号码",
+    "note": "Exchanging contact details, common when arranging group work"
+  },
+  "Freshers' Fair": {
+    "zh": "新生迎新集市",
+    "note": "An event at the start of term where new students explore clubs/societies"
+  },
+  "society": {
+    "zh": "社团",
+    "note": "A student club based around a shared interest"
+  },
+  "workload": {
+    "zh": "工作量/作业量",
+    "note": "The amount of academic work you have to do"
+  },
+  "back to back": {
+    "zh": "连续不间断",
+    "note": "One after another with no break in between"
+  },
+  "sign up": {
+    "zh": "报名/注册",
+    "note": "To register for something, e.g. a module or event"
+  },
+  "good luck": {
+    "zh": "祝你好运/顺利",
+    "note": "Common well-wish before an exam or challenge"
   }
 }

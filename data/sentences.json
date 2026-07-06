@@ -805,6 +805,193 @@
           ]
         }
       ]
+    },
+    {
+      "id": "lesson-05",
+      "title": "University Life",
+      "titleZh": "大学生活",
+      "sentences": [
+        {
+          "id": "l05-s01",
+          "en": "Sorry, is this seat taken?",
+          "zh": "不好意思，这个座位有人坐吗？",
+          "audio": "audio/l05-s01.webm",
+          "words": [
+            "is this seat taken"
+          ]
+        },
+        {
+          "id": "l05-s02",
+          "en": "Could you say that again? I didn't quite catch it.",
+          "zh": "你能再说一遍吗？我没太听清。",
+          "audio": "audio/l05-s02.webm",
+          "words": [
+            "didn't quite catch it"
+          ]
+        },
+        {
+          "id": "l05-s03",
+          "en": "Do we need to do the reading before the seminar?",
+          "zh": "我们研讨课前需要先读材料吗？",
+          "audio": "audio/l05-s03.webm",
+          "words": [
+            "seminar"
+          ]
+        },
+        {
+          "id": "l05-s04",
+          "en": "I'm a bit stuck on this question, could you go over it again?",
+          "zh": "这道题我有点卡住了，你能再讲一遍吗？",
+          "audio": "audio/l05-s04.webm",
+          "words": [
+            "stuck on"
+          ]
+        },
+        {
+          "id": "l05-s05",
+          "en": "Could I pop by your office hours this week?",
+          "zh": "这周我可以去你的答疑时间找你吗？",
+          "audio": "audio/l05-s05.webm",
+          "words": [
+            "office hours"
+          ]
+        },
+        {
+          "id": "l05-s06",
+          "en": "I just wanted to check I'm on the right track with my essay.",
+          "zh": "我只是想确认一下论文方向对不对。",
+          "audio": "audio/l05-s06.webm",
+          "words": [
+            "on the right track"
+          ]
+        },
+        {
+          "id": "l05-s07",
+          "en": "When's the deadline for this assignment?",
+          "zh": "这个作业的截止日期是什么时候？",
+          "audio": "audio/l05-s07.webm",
+          "words": [
+            "deadline"
+          ]
+        },
+        {
+          "id": "l05-s08",
+          "en": "Could I possibly get an extension? I've been unwell.",
+          "zh": "我能申请延期吗？我最近身体不舒服。",
+          "audio": "audio/l05-s08.webm",
+          "words": [
+            "extension"
+          ]
+        },
+        {
+          "id": "l05-s09",
+          "en": "How do I log into the student portal?",
+          "zh": "我要怎么登录学生系统？",
+          "audio": "audio/l05-s09.webm",
+          "words": [
+            "student portal"
+          ]
+        },
+        {
+          "id": "l05-s10",
+          "en": "My laptop won't connect to the uni wifi.",
+          "zh": "我的笔记本连不上学校的无线网。",
+          "audio": "audio/l05-s10.webm",
+          "words": [
+            "wifi"
+          ]
+        },
+        {
+          "id": "l05-s11",
+          "en": "Where do I go to print my essay?",
+          "zh": "我要去哪里打印论文？",
+          "audio": "audio/l05-s11.webm",
+          "words": [
+            "print"
+          ]
+        },
+        {
+          "id": "l05-s12",
+          "en": "Could you show me how to reserve a study room?",
+          "zh": "你能教我怎么预约自习室吗？",
+          "audio": "audio/l05-s12.webm",
+          "words": [
+            "reserve"
+          ]
+        },
+        {
+          "id": "l05-s13",
+          "en": "Are we doing this as a group project?",
+          "zh": "这个是要做小组作业吗？",
+          "audio": "audio/l05-s13.webm",
+          "words": [
+            "group project"
+          ]
+        },
+        {
+          "id": "l05-s14",
+          "en": "Let's swap numbers so we can sort out a time to meet.",
+          "zh": "我们交换一下号码，方便约时间见面。",
+          "audio": "audio/l05-s14.webm",
+          "words": [
+            "swap numbers"
+          ]
+        },
+        {
+          "id": "l05-s15",
+          "en": "Fancy coming to the Freshers' Fair with us?",
+          "zh": "要不要跟我们一起去新生迎新集市？",
+          "audio": "audio/l05-s15.webm",
+          "words": [
+            "Freshers' Fair"
+          ]
+        },
+        {
+          "id": "l05-s16",
+          "en": "I'm thinking of joining a society, any recommendations?",
+          "zh": "我在考虑加入一个社团，有什么推荐吗？",
+          "audio": "audio/l05-s16.webm",
+          "words": [
+            "society"
+          ]
+        },
+        {
+          "id": "l05-s17",
+          "en": "How's your workload this term?",
+          "zh": "你这学期的作业量怎么样？",
+          "audio": "audio/l05-s17.webm",
+          "words": [
+            "workload"
+          ]
+        },
+        {
+          "id": "l05-s18",
+          "en": "I've got three lectures back to back tomorrow.",
+          "zh": "我明天有三节课连着上。",
+          "audio": "audio/l05-s18.webm",
+          "words": [
+            "back to back"
+          ]
+        },
+        {
+          "id": "l05-s19",
+          "en": "Don't forget to sign up for the module by Friday.",
+          "zh": "别忘了周五前报名这门课。",
+          "audio": "audio/l05-s19.webm",
+          "words": [
+            "sign up"
+          ]
+        },
+        {
+          "id": "l05-s20",
+          "en": "Good luck with your exams!",
+          "zh": "祝你考试顺利！",
+          "audio": "audio/l05-s20.webm",
+          "words": [
+            "good luck"
+          ]
+        }
+      ]
     }
   ]
 }
