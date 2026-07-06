@@ -1,4 +1,8 @@
 {
+  "999": {
+    "zh": "999（英国紧急电话）",
+    "note": "UK emergency number for police, fire, or ambulance"
+  },
   "flat white": {
     "zh": "澄白咖啡",
     "note": "A popular UK coffee order — espresso with steamed milk, similar to a latte but stronger and smaller."
@@ -335,10 +339,6 @@
     "zh": "危及生命的",
     "note": "Describes a serious, urgent medical condition"
   },
-  "999": {
-    "zh": "999（英国紧急电话）",
-    "note": "UK emergency number for police, fire, or ambulance"
-  },
   "on its way": {
     "zh": "正在赶来",
     "note": "Something (e.g. help) is currently travelling towards you"
@@ -358,5 +358,13 @@
   "get well soon": {
     "zh": "早日康复",
     "note": "Common well-wish said to someone who is ill"
+  },
+  "a&e": {
+    "zh": "急诊科",
+    "note": "Accident & Emergency — the UK term for the ER"
+  },
+  "gp surgery": {
+    "zh": "全科诊所",
+    "note": "British term for a local doctor's practice/clinic"
   }
 }
