@@ -10,6 +10,8 @@ let timerInterval = null;
 let recordStart = null;
 let dataDirty = { sentences: false, dictionary: false };
 let pendingAudio = {}; // sentenceId -> { blob, ext }
+let activeRecordingContext = null; // { lessonId, sentenceId }
+const recentlyPublishedAudio = new Set(); // sentenceId -> uploaded this session
 
 const el = (id) => document.getElementById(id);
 
@@ -308,6 +310,44 @@ function downloadRecording() {
   a.remove();
 }
 
+function openRecorderForSentence(lessonId, sentenceId) {
+  activeRecordingContext = { lessonId, sentenceId };
+  el('sentenceId').value = sentenceId;
+  deleteRecording();
+  el('recStatus').textContent = '';
+  el('recTargetHint').textContent = `🎤 正在为 "${sentenceId}" 录音 — 录完后点击"保存并发布这段录音"直接上传到 GitHub。`;
+  el('recTargetHint').style.display = 'block';
+  window.scrollTo({ top: el('recordSection').offsetTop - 20, behavior: 'smooth' });
+}
+
+async function saveAndPublishRecording() {
+  if (!recordedBlob) { alert('请先录音。'); return; }
+  const id = el('sentenceId').value.trim();
+  if (!id) { alert('请先输入或选择 Sentence ID。'); return; }
+  if (!isGitHubConfigured()) { alert('请先在页面顶部设置 GitHub 连接。'); return; }
+
+  let audioPath = `audio/${id}.${extFromMimeType(recordedMimeType)}`;
+  const lesson = sentencesData.lessons.find(l => l.sentences.some(s => s.id === id));
+  const existingSentence = lesson && lesson.sentences.find(s => s.id === id);
+  if (existingSentence && existingSentence.audio) {
+    audioPath = existingSentence.audio;
+  }
+
+  el('publishRecBtn').disabled = true;
+  el('recStatus').textContent = `正在上传 ${audioPath} …`;
+  try {
+    await publishBinaryFile(audioPath, recordedBlob);
+    delete pendingAudio[id];
+    recentlyPublishedAudio.add(id);
+    el('recStatus').textContent = `✓ 已上传并发布 ${audioPath}`;
+    refreshPreview();
+  } catch (err) {
+    el('recStatus').textContent = `✗ 上传失败：${err.message}`;
+  } finally {
+    el('publishRecBtn').disabled = false;
+  }
+}
+
 /* ---------- Sentence form ---------- */
 
 function addSentence() {
@@ -373,6 +413,8 @@ function clearSentenceForm() {
   el('newLessonTitleZh').value = '';
   el('recStatus').textContent = '';
   el('useRecBtn').textContent = '✓ Use this recording';
+  el('recTargetHint').style.display = 'none';
+  activeRecordingContext = null;
   deleteRecording();
 }
 
@@ -453,7 +495,9 @@ function refreshPreview() {
           </div>
           <div class="list-actions">
             <button class="btn btn-secondary btn-small" onclick="editSentence('${lesson.id}','${s.id}')">Edit</button>
+            <button class="btn btn-secondary btn-small" onclick="openRecorderForSentence('${lesson.id}','${s.id}')">🎤 录音</button>
             <button class="btn btn-danger btn-small" onclick="deleteSentence('${lesson.id}','${s.id}')">Delete</button>
+            ${recentlyPublishedAudio.has(s.id) ? '<span class="hint status-ok">✓ 已录音</span>' : ''}
           </div>
         </div>
       `).join('') || '<p class="hint">No sentences yet.</p>'}
@@ -523,6 +567,7 @@ window.addEventListener('DOMContentLoaded', () => {
   el('reRecordBtn').addEventListener('click', reRecord);
   el('deleteRecBtn').addEventListener('click', deleteRecording);
   el('useRecBtn').addEventListener('click', useRecording);
+  el('publishRecBtn').addEventListener('click', saveAndPublishRecording);
   el('downloadRecBtn').addEventListener('click', downloadRecording);
   el('addSentenceBtn').addEventListener('click', addSentence);
   el('addDictWordBtn').addEventListener('click', addDictionaryWord);

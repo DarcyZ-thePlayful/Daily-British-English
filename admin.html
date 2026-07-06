@@ -40,8 +40,9 @@
   <!-- SENTENCE TAB -->
   <div id="panel-sentence" class="tab-panel">
 
-    <div class="admin-section">
+    <div class="admin-section" id="recordSection">
       <h2>1. Record the audio</h2>
+      <p class="hint status-ok" id="recTargetHint" style="display:none;"></p>
       <div class="record-row">
         <button id="startRecBtn" class="btn btn-primary">● Start recording</button>
         <button id="stopRecBtn" class="btn btn-secondary" disabled>■ Stop</button>
@@ -53,6 +54,7 @@
         <button id="reRecordBtn" class="btn btn-secondary">↺ Re-record</button>
         <button id="deleteRecBtn" class="btn btn-danger">Delete</button>
         <button id="useRecBtn" class="btn btn-primary">✓ Use this recording</button>
+        <button id="publishRecBtn" class="btn btn-primary">💾 保存并发布这段录音</button>
         <button id="downloadRecBtn" class="btn btn-secondary">⬇ Local copy</button>
       </div>
       <p class="hint" id="recStatus"></p>
