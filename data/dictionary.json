@@ -118,5 +118,85 @@
   "have a good one": {
     "zh": "祝你愉快",
     "note": "Casual farewell"
+  },
+  "next door": {
+    "zh": "隔壁",
+    "note": "The room/flat right beside yours"
+  },
+  "give us a shout": {
+    "zh": "叫我一声",
+    "note": "Informal 'give me/us' — very British, means 'let me know'"
+  },
+  "then": {
+    "zh": "那么/呢",
+    "note": "Conversational filler at the end of a question, softens it"
+  },
+  "on the side": {
+    "zh": "在台面上",
+    "note": "On the kitchen counter/worktop"
+  },
+  "hob": {
+    "zh": "炉灶/灶台",
+    "note": "British word for stovetop"
+  },
+  "cuppa": {
+    "zh": "一杯茶",
+    "note": "Casual short for 'a cup of tea'"
+  },
+  "stick": {
+    "zh": "贴/放",
+    "note": "Casual for 'put' or 'attach', e.g. 'stick a label on it'"
+  },
+  "washing up": {
+    "zh": "洗碗",
+    "note": "British term for washing dishes (not laundry)"
+  },
+  "rota": {
+    "zh": "轮值表",
+    "note": "A rota is a schedule/rotation list, e.g. for chores"
+  },
+  "your bit": {
+    "zh": "你那一份",
+    "note": "Your share of something, e.g. a shared bill"
+  },
+  "spare": {
+    "zh": "备用的/多余的",
+    "note": "An extra one you're not currently using"
+  },
+  "help yourself": {
+    "zh": "请自便",
+    "note": "Invites someone to take/use something freely"
+  },
+  "too loud": {
+    "zh": "太吵",
+    "note": "Excessive noise level"
+  },
+  "keep it down": {
+    "zh": "小声点",
+    "note": "Asking someone to reduce noise"
+  },
+  "mate": {
+    "zh": "朋友/哥们",
+    "note": "Very common British word for friend"
+  },
+  "the more the merrier": {
+    "zh": "人越多越热闹",
+    "note": "A set phrase welcoming more people to join"
+  },
+  "nabbed": {
+    "zh": "抢到/占到",
+    "note": "Casual past tense of 'nab', meaning grabbed quickly"
+  },
+  "proper": {
+    "zh": "非常/特别",
+    "note": "British informal intensifier, e.g. 'proper busy' = very busy"
+  },
+  "on the blink": {
+    "zh": "坏掉了/不正常了",
+    "note": "Informal way to say a device/appliance isn't working properly"
+  },
+  "pop a ticket in": {
+    "zh": "提交一个报修单",
+    "note": "Casual for submitting a maintenance request"
   }
 }

@@ -256,6 +256,186 @@
           "words": [
             "a bit of a state"
           ]
+        },
+        {
+          "id": "l03-s03",
+          "en": "Nice one, I'm just moving in next door.",
+          "zh": "太好了，我就搬到隔壁。",
+          "audio": "audio/l03-s03.webm",
+          "words": [
+            "next door"
+          ]
+        },
+        {
+          "id": "l03-s04",
+          "en": "Give us a shout if you need a hand with your bags.",
+          "zh": "如果搬东西需要帮忙，叫我一声就行。",
+          "audio": "audio/l03-s04.webm",
+          "words": [
+            "give us a shout"
+          ]
+        },
+        {
+          "id": "l03-s05",
+          "en": "Where are you from, then?",
+          "zh": "那你是哪里人呀？",
+          "audio": "audio/l03-s05.webm",
+          "words": [
+            "then"
+          ]
+        },
+        {
+          "id": "l03-s06",
+          "en": "Whose mug is this on the side?",
+          "zh": "台面上这个杯子是谁的？",
+          "audio": "audio/l03-s06.webm",
+          "words": [
+            "on the side"
+          ]
+        },
+        {
+          "id": "l03-s07",
+          "en": "Feel free to use the hob, just give it a wipe after.",
+          "zh": "你可以随便用炉子，用完擦一下就行。",
+          "audio": "audio/l03-s07.webm",
+          "words": [
+            "hob"
+          ]
+        },
+        {
+          "id": "l03-s08",
+          "en": "Fancy a cuppa while the kettle's on?",
+          "zh": "水壶烧着呢，要不要来杯茶？",
+          "audio": "audio/l03-s08.webm",
+          "words": [
+            "cuppa"
+          ]
+        },
+        {
+          "id": "l03-s09",
+          "en": "I'll stick my name on my food in the fridge, if that's alright.",
+          "zh": "我把名字贴在冰箱里的食物上，可以吧？",
+          "audio": "audio/l03-s09.webm",
+          "words": [
+            "stick"
+          ]
+        },
+        {
+          "id": "l03-s10",
+          "en": "Whose turn is it to do the washing up?",
+          "zh": "这次轮到谁洗碗了？",
+          "audio": "audio/l03-s10.webm",
+          "words": [
+            "washing up"
+          ]
+        },
+        {
+          "id": "l03-s11",
+          "en": "We should sort out a cleaning rota, to be fair.",
+          "zh": "说真的，我们应该搞个打扫轮值表。",
+          "audio": "audio/l03-s11.webm",
+          "words": [
+            "rota"
+          ]
+        },
+        {
+          "id": "l03-s12",
+          "en": "Don't forget your bit of the electric bill's due Friday.",
+          "zh": "别忘了你那份电费周五要交。",
+          "audio": "audio/l03-s12.webm",
+          "words": [
+            "your bit"
+          ]
+        },
+        {
+          "id": "l03-s13",
+          "en": "Have you got a spare charger I could borrow?",
+          "zh": "你有多余的充电器可以借我吗？",
+          "audio": "audio/l03-s13.webm",
+          "words": [
+            "spare"
+          ]
+        },
+        {
+          "id": "l03-s14",
+          "en": "Course, help yourself, it's on my desk.",
+          "zh": "当然可以，自己拿吧，就在我桌上。",
+          "audio": "audio/l03-s14.webm",
+          "words": [
+            "help yourself"
+          ]
+        },
+        {
+          "id": "l03-s15",
+          "en": "Sorry, was I too loud last night?",
+          "zh": "不好意思，我昨晚是不是太吵了？",
+          "audio": "audio/l03-s15.webm",
+          "words": [
+            "too loud"
+          ]
+        },
+        {
+          "id": "l03-s16",
+          "en": "No worries, just keep it down after midnight if you can.",
+          "zh": "没事，可以的话午夜后小声点就行。",
+          "audio": "audio/l03-s16.webm",
+          "words": [
+            "keep it down"
+          ]
+        },
+        {
+          "id": "l03-s17",
+          "en": "Is it alright if a mate comes round later?",
+          "zh": "等下朋友过来方便吗？",
+          "audio": "audio/l03-s17.webm",
+          "words": [
+            "mate"
+          ]
+        },
+        {
+          "id": "l03-s18",
+          "en": "Course, the more the merrier.",
+          "zh": "当然，人越多越热闹。",
+          "audio": "audio/l03-s18.webm",
+          "words": [
+            "the more the merrier"
+          ]
+        },
+        {
+          "id": "l03-s19",
+          "en": "Have you nabbed a washing machine slot?",
+          "zh": "你抢到洗衣机的使用时段了吗？",
+          "audio": "audio/l03-s19.webm",
+          "words": [
+            "nabbed"
+          ]
+        },
+        {
+          "id": "l03-s20",
+          "en": "It's proper busy on a Sunday, so get in early.",
+          "zh": "周日特别抢手，早点去占。",
+          "audio": "audio/l03-s20.webm",
+          "words": [
+            "proper"
+          ]
+        },
+        {
+          "id": "l03-s21",
+          "en": "The radiator in my room's on the blink.",
+          "zh": "我房间的暖气坏了。",
+          "audio": "audio/l03-s21.webm",
+          "words": [
+            "on the blink"
+          ]
+        },
+        {
+          "id": "l03-s22",
+          "en": "I'll pop a ticket in with maintenance for you.",
+          "zh": "我帮你跟维修部报修一下。",
+          "audio": "audio/l03-s22.webm",
+          "words": [
+            "pop a ticket in"
+          ]
         }
       ]
     }
