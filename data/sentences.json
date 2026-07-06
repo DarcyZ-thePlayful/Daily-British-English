@@ -131,6 +131,78 @@
           "words": [
             "to go"
           ]
+        },
+        {
+          "id": "l01-s15",
+          "en": "Do you take card, or is it cash only?",
+          "zh": "你们可以刷卡吗，还是只收现金？",
+          "audio": "audio/l01-s15.webm",
+          "words": [
+            "cash only"
+          ]
+        },
+        {
+          "id": "l01-s16",
+          "en": "Contactless is fine, isn't it?",
+          "zh": "用非接触支付可以吧？",
+          "audio": "audio/l01-s16.webm",
+          "words": [
+            "contactless"
+          ]
+        },
+        {
+          "id": "l01-s17",
+          "en": "That'll be £4.50 altogether.",
+          "zh": "一共是4.50英镑。",
+          "audio": "audio/l01-s17.webm",
+          "words": [
+            "altogether"
+          ]
+        },
+        {
+          "id": "l01-s18",
+          "en": "I'll just pop it on the counter for you.",
+          "zh": "我会把它放在柜台上给你。",
+          "audio": "audio/l01-s18.webm",
+          "words": [
+            "pop"
+          ]
+        },
+        {
+          "id": "l01-s19",
+          "en": "Give us two minutes and I'll call your name.",
+          "zh": "给我们两分钟，我会叫你的名字。",
+          "audio": "audio/l01-s19.webm",
+          "words": [
+            "give us"
+          ]
+        },
+        {
+          "id": "l01-s20",
+          "en": "Sorry, I think this is the wrong order.",
+          "zh": "不好意思，我觉得这个点错了。",
+          "audio": "audio/l01-s20.webm",
+          "words": [
+            "wrong order"
+          ]
+        },
+        {
+          "id": "l01-s21",
+          "en": "No worries, I'll sort that out for you.",
+          "zh": "没关系，我马上帮你处理。",
+          "audio": "audio/l01-s21.webm",
+          "words": [
+            "sort out"
+          ]
+        },
+        {
+          "id": "l01-s22",
+          "en": "Cheers, have a good one!",
+          "zh": "谢谢，祝你愉快！",
+          "audio": "audio/l01-s22.webm",
+          "words": [
+            "have a good one"
+          ]
         }
       ]
     },
