@@ -590,5 +590,109 @@
   "take care": {
     "zh": "保重",
     "note": "Warm, common way to say goodbye"
+  },
+  "just browsing": {
+    "zh": "随便看看",
+    "note": "Common reply when a shop assistant offers help, meaning you don't need assistance yet"
+  },
+  "try on": {
+    "zh": "试穿",
+    "note": "To put on clothing to check fit before buying"
+  },
+  "fitting rooms": {
+    "zh": "试衣间",
+    "note": "British term for changing rooms in a clothes shop"
+  },
+  "size": {
+    "zh": "尺码",
+    "note": "UK clothing sizes differ from US/EU, worth double-checking"
+  },
+  "another colour": {
+    "zh": "其他颜色",
+    "note": "Asking if an item comes in a different colour option"
+  },
+  "too tight": {
+    "zh": "太紧",
+    "note": "Describes clothing that doesn't fit comfortably"
+  },
+  "in the sale": {
+    "zh": "打折商品",
+    "note": "British phrase for something reduced in price ('the sale' = discount period)"
+  },
+  "discount": {
+    "zh": "折扣",
+    "note": "A price reduction"
+  },
+  "% off": {
+    "zh": "打折/减免百分比",
+    "note": "Used to state a percentage discount, e.g. '20% off'"
+  },
+  "apple pay": {
+    "zh": "Apple Pay",
+    "note": "Mobile contactless payment method, widely accepted in the UK"
+  },
+  "pay by card": {
+    "zh": "刷卡支付",
+    "note": "Paying with a debit or credit card rather than cash"
+  },
+  "declined": {
+    "zh": "被拒绝",
+    "note": "When a card payment fails to go through"
+  },
+  "pin": {
+    "zh": "密码",
+    "note": "Personal Identification Number used to authorise card payments"
+  },
+  "return": {
+    "zh": "退货",
+    "note": "Bringing an item back to the shop, usually for a refund or exchange"
+  },
+  "receipt": {
+    "zh": "收据",
+    "note": "Proof of purchase, often required for returns"
+  },
+  "refund": {
+    "zh": "退款",
+    "note": "Getting your money back for a returned item"
+  },
+  "tag": {
+    "zh": "标签",
+    "note": "The label attached to new clothing, often needed intact for returns"
+  },
+  "bag": {
+    "zh": "袋子",
+    "note": "In UK supermarkets you're often asked if you need one, sometimes at a small charge"
+  },
+  "loyalty card": {
+    "zh": "会员卡",
+    "note": "A card used to collect points/discounts at a specific shop"
+  },
+  "self-checkout": {
+    "zh": "自助结账",
+    "note": "Machines that let customers scan and pay without a cashier"
+  },
+  "unexpected item": {
+    "zh": "意外物品",
+    "note": "Famous self-checkout error message ('unexpected item in the bagging area')"
+  },
+  "open a bank account": {
+    "zh": "开银行账户",
+    "note": "Common early task for international students settling in the UK"
+  },
+  "bank statement": {
+    "zh": "银行对账单",
+    "note": "A document showing account transactions over a period"
+  },
+  "balance": {
+    "zh": "余额",
+    "note": "The amount of money currently in an account"
+  },
+  "skint": {
+    "zh": "手头紧/没钱",
+    "note": "Very common British informal word for having little money"
+  },
+  "bargain": {
+    "zh": "划算的交易",
+    "note": "Something bought for a good, low price"
   }
 }

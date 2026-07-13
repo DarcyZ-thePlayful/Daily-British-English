@@ -1341,6 +1341,247 @@
           ]
         }
       ]
+    },
+    {
+      "id": "lesson-07",
+      "title": "Money & Shopping",
+      "titleZh": "购物与理财",
+      "sentences": [
+        {
+          "id": "l07-s01",
+          "en": "Just browsing, thanks.",
+          "zh": "只是随便看看，谢谢。",
+          "audio": "audio/l07-s01.webm",
+          "words": [
+            "just browsing"
+          ]
+        },
+        {
+          "id": "l07-s02",
+          "en": "Could I try this on, please?",
+          "zh": "我可以试穿一下这个吗？",
+          "audio": "audio/l07-s02.webm",
+          "words": [
+            "try on"
+          ]
+        },
+        {
+          "id": "l07-s03",
+          "en": "Where are the fitting rooms?",
+          "zh": "试衣间在哪里？",
+          "audio": "audio/l07-s03.webm",
+          "words": [
+            "fitting rooms"
+          ]
+        },
+        {
+          "id": "l07-s04",
+          "en": "Have you got this in a size 10?",
+          "zh": "这个有10码的吗？",
+          "audio": "audio/l07-s04.webm",
+          "words": [
+            "size"
+          ]
+        },
+        {
+          "id": "l07-s05",
+          "en": "Do you have this in another colour?",
+          "zh": "这个有其他颜色吗？",
+          "audio": "audio/l07-s05.webm",
+          "words": [
+            "another colour"
+          ]
+        },
+        {
+          "id": "l07-s06",
+          "en": "It's a bit too tight, have you got a bigger size?",
+          "zh": "有点太紧了，有大一号的吗？",
+          "audio": "audio/l07-s06.webm",
+          "words": [
+            "too tight"
+          ]
+        },
+        {
+          "id": "l07-s07",
+          "en": "Is this in the sale?",
+          "zh": "这个是打折商品吗？",
+          "audio": "audio/l07-s07.webm",
+          "words": [
+            "in the sale"
+          ]
+        },
+        {
+          "id": "l07-s08",
+          "en": "How much is the discount?",
+          "zh": "折扣是多少？",
+          "audio": "audio/l07-s08.webm",
+          "words": [
+            "discount"
+          ]
+        },
+        {
+          "id": "l07-s09",
+          "en": "Everything's 20% off today.",
+          "zh": "今天全场八折。",
+          "audio": "audio/l07-s09.webm",
+          "words": [
+            "% off"
+          ]
+        },
+        {
+          "id": "l07-s10",
+          "en": "Do you take Apple Pay?",
+          "zh": "你们支持Apple Pay吗？",
+          "audio": "audio/l07-s10.webm",
+          "words": [
+            "apple pay"
+          ]
+        },
+        {
+          "id": "l07-s11",
+          "en": "Could I pay by card?",
+          "zh": "我可以刷卡付款吗？",
+          "audio": "audio/l07-s11.webm",
+          "words": [
+            "pay by card"
+          ]
+        },
+        {
+          "id": "l07-s12",
+          "en": "Sorry, my card's just been declined.",
+          "zh": "不好意思，我的卡被拒绝了。",
+          "audio": "audio/l07-s12.webm",
+          "words": [
+            "declined"
+          ]
+        },
+        {
+          "id": "l07-s13",
+          "en": "Do you need my PIN for this?",
+          "zh": "这个需要输入密码吗？",
+          "audio": "audio/l07-s13.webm",
+          "words": [
+            "pin"
+          ]
+        },
+        {
+          "id": "l07-s14",
+          "en": "I'd like to return this, please.",
+          "zh": "我想退这个，谢谢。",
+          "audio": "audio/l07-s14.webm",
+          "words": [
+            "return"
+          ]
+        },
+        {
+          "id": "l07-s15",
+          "en": "Have you got the receipt?",
+          "zh": "你有收据吗？",
+          "audio": "audio/l07-s15.webm",
+          "words": [
+            "receipt"
+          ]
+        },
+        {
+          "id": "l07-s16",
+          "en": "Can I get a refund, or just an exchange?",
+          "zh": "我可以退款还是只能换货？",
+          "audio": "audio/l07-s16.webm",
+          "words": [
+            "refund"
+          ]
+        },
+        {
+          "id": "l07-s17",
+          "en": "It's still got the tag on.",
+          "zh": "标签还在上面。",
+          "audio": "audio/l07-s17.webm",
+          "words": [
+            "tag"
+          ]
+        },
+        {
+          "id": "l07-s18",
+          "en": "Do you need a bag?",
+          "zh": "你需要袋子吗？",
+          "audio": "audio/l07-s18.webm",
+          "words": [
+            "bag"
+          ]
+        },
+        {
+          "id": "l07-s19",
+          "en": "Have you got a loyalty card?",
+          "zh": "你有会员卡吗？",
+          "audio": "audio/l07-s19.webm",
+          "words": [
+            "loyalty card"
+          ]
+        },
+        {
+          "id": "l07-s20",
+          "en": "The self-checkout's free over there.",
+          "zh": "那边的自助结账机是空的。",
+          "audio": "audio/l07-s20.webm",
+          "words": [
+            "self-checkout"
+          ]
+        },
+        {
+          "id": "l07-s21",
+          "en": "Sorry, there's an unexpected item in the bagging area.",
+          "zh": "不好意思，装袋区域出现了意外物品。",
+          "audio": "audio/l07-s21.webm",
+          "words": [
+            "unexpected item"
+          ]
+        },
+        {
+          "id": "l07-s22",
+          "en": "I'd like to open a bank account, please.",
+          "zh": "我想开一个银行账户，谢谢。",
+          "audio": "audio/l07-s22.webm",
+          "words": [
+            "open a bank account"
+          ]
+        },
+        {
+          "id": "l07-s23",
+          "en": "Could I get a bank statement for the last three months?",
+          "zh": "我可以拿到最近三个月的银行对账单吗？",
+          "audio": "audio/l07-s23.webm",
+          "words": [
+            "bank statement"
+          ]
+        },
+        {
+          "id": "l07-s24",
+          "en": "What's my account balance?",
+          "zh": "我的账户余额是多少？",
+          "audio": "audio/l07-s24.webm",
+          "words": [
+            "balance"
+          ]
+        },
+        {
+          "id": "l07-s25",
+          "en": "I'm a bit skint this month, to be honest.",
+          "zh": "说实话，我这个月手头有点紧。",
+          "audio": "audio/l07-s25.webm",
+          "words": [
+            "skint"
+          ]
+        },
+        {
+          "id": "l07-s26",
+          "en": "That's a bargain!",
+          "zh": "这真划算！",
+          "audio": "audio/l07-s26.webm",
+          "words": [
+            "bargain"
+          ]
+        }
+      ]
     }
   ]
 }
