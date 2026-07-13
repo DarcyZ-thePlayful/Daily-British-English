@@ -438,5 +438,157 @@
   "freshers' fair": {
     "zh": "新生迎新集市",
     "note": "An event at the start of term where new students explore clubs/societies"
+  },
+  "bit chilly": {
+    "zh": "有点冷",
+    "note": "Mild, understated way to say it's cold"
+  },
+  "typical british weather": {
+    "zh": "典型的英国天气",
+    "note": "Common jokey remark about how quickly UK weather changes"
+  },
+  "make the most of": {
+    "zh": "充分利用/好好享受",
+    "note": "To take full advantage of something while you can"
+  },
+  "alright": {
+    "zh": "你好/还好吗",
+    "note": "Very common casual British greeting, often said as a question"
+  },
+  "long time no see": {
+    "zh": "好久不见",
+    "note": "Said when meeting someone you haven't seen in a while"
+  },
+  "can't complain": {
+    "zh": "还不错/没什么好抱怨的",
+    "note": "Casual, modest way of saying things are fine"
+  },
+  "treating you": {
+    "zh": "对你怎么样",
+    "note": "Used in 'how's X treating you', asking how an experience has been"
+  },
+  "fancy": {
+    "zh": "想不想/要不要",
+    "note": "Casual way to suggest or ask if someone wants something"
+  },
+  "up to": {
+    "zh": "在做什么/有什么安排",
+    "note": "Used in 'what are you up to', asking about someone's plans/activities"
+  },
+  "free": {
+    "zh": "有空",
+    "note": "Available, not busy"
+  },
+  "pencil in": {
+    "zh": "先定一个大概时间",
+    "note": "To tentatively schedule something, open to change later"
+  },
+  "well up for": {
+    "zh": "很想去/很乐意",
+    "note": "Casual enthusiastic way of agreeing to something"
+  },
+  "sounds good": {
+    "zh": "听起来不错",
+    "note": "Casual way to agree to a plan"
+  },
+  "can't make it": {
+    "zh": "去不了",
+    "note": "Polite way to decline an invitation due to unavailability"
+  },
+  "another time": {
+    "zh": "下次吧",
+    "note": "Suggests rescheduling for later"
+  },
+  "rain check": {
+    "zh": "改天再约",
+    "note": "Idiom for postponing an invitation to a later date"
+  },
+  "what are you having": {
+    "zh": "你想喝点什么",
+    "note": "Common phrase when offering to buy someone a drink"
+  },
+  "my round": {
+    "zh": "这轮我请",
+    "note": "Pub custom: taking a turn to buy drinks for the group"
+  },
+  "cheers": {
+    "zh": "干杯/谢谢",
+    "note": "Used both as a toast and as a casual thank-you"
+  },
+  "same again": {
+    "zh": "再来一样的",
+    "note": "Ordering another of the same drink"
+  },
+  "nice one": {
+    "zh": "干得漂亮/真棒",
+    "note": "Casual praise or approval"
+  },
+  "having a laugh": {
+    "zh": "开玩笑",
+    "note": "Used in 'you're having a laugh', meaning 'you must be joking'"
+  },
+  "give over": {
+    "zh": "别闹了/得了吧",
+    "note": "Informal British way of telling someone to stop, often in jest"
+  },
+  "well into": {
+    "zh": "很喜欢/很投入",
+    "note": "Enthusiastic about a hobby or interest at the moment"
+  },
+  "spare time": {
+    "zh": "空闲时间",
+    "note": "Free time outside of work/study"
+  },
+  "brilliant": {
+    "zh": "太棒了",
+    "note": "Very common British word for excellent/great"
+  },
+  "rubbish": {
+    "zh": "糟糕/差劲",
+    "note": "Informal British word for something bad or of poor quality"
+  },
+  "fair enough": {
+    "zh": "有道理/行吧",
+    "note": "Casual acceptance of a reason or explanation, even if not fully agreeing"
+  },
+  "be a pain": {
+    "zh": "添麻烦",
+    "note": "Used in 'I don't want to be a pain', softening a request"
+  },
+  "no bother at all": {
+    "zh": "一点都不麻烦",
+    "note": "Reassurance that a request or favour is not a problem"
+  },
+  "a bit much": {
+    "zh": "有点过分",
+    "note": "Understated way of saying something is excessive"
+  },
+  "taking forever": {
+    "zh": "花了好久",
+    "note": "Informal complaint about something being slow"
+  },
+  "in the queue": {
+    "zh": "在排队",
+    "note": "'Queue' is the British word for a line of waiting people"
+  },
+  "this is": {
+    "zh": "这是",
+    "note": "Standard phrase for introducing someone"
+  },
+  "heard a lot about you": {
+    "zh": "久仰大名",
+    "note": "Polite phrase said when meeting someone you've heard about before"
+  },
+  "best be off": {
+    "zh": "该走了",
+    "note": "Casual British way of saying it's time to leave"
+  },
+  "catch you later": {
+    "zh": "回头见",
+    "note": "Casual farewell"
+  },
+  "take care": {
+    "zh": "保重",
+    "note": "Warm, common way to say goodbye"
   }
 }

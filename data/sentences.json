@@ -992,6 +992,355 @@
           ]
         }
       ]
+    },
+    {
+      "id": "lesson-06",
+      "title": "Socialising & Small Talk",
+      "titleZh": "社交与闲聊",
+      "sentences": [
+        {
+          "id": "l06-s01",
+          "en": "Bit chilly today, isn't it?",
+          "zh": "今天有点冷，是不是？",
+          "audio": "audio/l06-s01.webm",
+          "words": [
+            "bit chilly"
+          ]
+        },
+        {
+          "id": "l06-s02",
+          "en": "Typical British weather, sun one minute, rain the next.",
+          "zh": "典型的英国天气，一会儿出太阳一会儿下雨。",
+          "audio": "audio/l06-s02.webm",
+          "words": [
+            "typical british weather"
+          ]
+        },
+        {
+          "id": "l06-s03",
+          "en": "Make the most of the sunshine while it lasts!",
+          "zh": "趁着有阳光多享受一下吧！",
+          "audio": "audio/l06-s03.webm",
+          "words": [
+            "make the most of"
+          ]
+        },
+        {
+          "id": "l06-s04",
+          "en": "Alright? How's it going?",
+          "zh": "你好啊，最近怎么样？",
+          "audio": "audio/l06-s04.webm",
+          "words": [
+            "alright"
+          ]
+        },
+        {
+          "id": "l06-s05",
+          "en": "Long time no see!",
+          "zh": "好久不见！",
+          "audio": "audio/l06-s05.webm",
+          "words": [
+            "long time no see"
+          ]
+        },
+        {
+          "id": "l06-s06",
+          "en": "Not too bad, can't complain.",
+          "zh": "还不错，没什么好抱怨的。",
+          "audio": "audio/l06-s06.webm",
+          "words": [
+            "can't complain"
+          ]
+        },
+        {
+          "id": "l06-s07",
+          "en": "How's uni been treating you?",
+          "zh": "大学生活对你怎么样？",
+          "audio": "audio/l06-s07.webm",
+          "words": [
+            "treating you"
+          ]
+        },
+        {
+          "id": "l06-s08",
+          "en": "Fancy grabbing a coffee sometime this week?",
+          "zh": "这周找时间一起喝杯咖啡怎么样？",
+          "audio": "audio/l06-s08.webm",
+          "words": [
+            "fancy"
+          ]
+        },
+        {
+          "id": "l06-s09",
+          "en": "What are you up to this weekend?",
+          "zh": "你这周末有什么安排？",
+          "audio": "audio/l06-s09.webm",
+          "words": [
+            "up to"
+          ]
+        },
+        {
+          "id": "l06-s10",
+          "en": "Are you free on Saturday?",
+          "zh": "你周六有空吗？",
+          "audio": "audio/l06-s10.webm",
+          "words": [
+            "free"
+          ]
+        },
+        {
+          "id": "l06-s11",
+          "en": "Let's pencil something in for next week.",
+          "zh": "我们下周先定个大概时间吧。",
+          "audio": "audio/l06-s11.webm",
+          "words": [
+            "pencil in"
+          ]
+        },
+        {
+          "id": "l06-s12",
+          "en": "Yeah, I'm well up for that.",
+          "zh": "好啊，我很想去。",
+          "audio": "audio/l06-s12.webm",
+          "words": [
+            "well up for"
+          ]
+        },
+        {
+          "id": "l06-s13",
+          "en": "Sounds good to me!",
+          "zh": "听起来不错！",
+          "audio": "audio/l06-s13.webm",
+          "words": [
+            "sounds good"
+          ]
+        },
+        {
+          "id": "l06-s14",
+          "en": "Ah, I can't make it, sorry, I've already got plans.",
+          "zh": "啊，我去不了，抱歉，我已经有安排了。",
+          "audio": "audio/l06-s14.webm",
+          "words": [
+            "can't make it"
+          ]
+        },
+        {
+          "id": "l06-s15",
+          "en": "Maybe another time?",
+          "zh": "那下次吧？",
+          "audio": "audio/l06-s15.webm",
+          "words": [
+            "another time"
+          ]
+        },
+        {
+          "id": "l06-s16",
+          "en": "Rain check?",
+          "zh": "改天再约可以吗？",
+          "audio": "audio/l06-s16.webm",
+          "words": [
+            "rain check"
+          ]
+        },
+        {
+          "id": "l06-s17",
+          "en": "What are you having?",
+          "zh": "你想喝点什么？",
+          "audio": "audio/l06-s17.webm",
+          "words": [
+            "what are you having"
+          ]
+        },
+        {
+          "id": "l06-s18",
+          "en": "It's my round, what'll it be?",
+          "zh": "这轮我请，你要喝什么？",
+          "audio": "audio/l06-s18.webm",
+          "words": [
+            "my round"
+          ]
+        },
+        {
+          "id": "l06-s19",
+          "en": "Cheers, mate!",
+          "zh": "干杯，兄弟！",
+          "audio": "audio/l06-s19.webm",
+          "words": [
+            "cheers"
+          ]
+        },
+        {
+          "id": "l06-s20",
+          "en": "Same again?",
+          "zh": "再来一样的？",
+          "audio": "audio/l06-s20.webm",
+          "words": [
+            "same again"
+          ]
+        },
+        {
+          "id": "l06-s21",
+          "en": "Nice one!",
+          "zh": "干得漂亮！",
+          "audio": "audio/l06-s21.webm",
+          "words": [
+            "nice one"
+          ]
+        },
+        {
+          "id": "l06-s22",
+          "en": "You're having a laugh, aren't you?",
+          "zh": "你在开玩笑吧？",
+          "audio": "audio/l06-s22.webm",
+          "words": [
+            "having a laugh"
+          ]
+        },
+        {
+          "id": "l06-s23",
+          "en": "Give over!",
+          "zh": "别闹了！",
+          "audio": "audio/l06-s23.webm",
+          "words": [
+            "give over"
+          ]
+        },
+        {
+          "id": "l06-s24",
+          "en": "I'm well into hiking at the moment.",
+          "zh": "我最近特别喜欢徒步。",
+          "audio": "audio/l06-s24.webm",
+          "words": [
+            "well into"
+          ]
+        },
+        {
+          "id": "l06-s25",
+          "en": "What do you get up to in your spare time?",
+          "zh": "你空闲时间一般做什么？",
+          "audio": "audio/l06-s25.webm",
+          "words": [
+            "spare time"
+          ]
+        },
+        {
+          "id": "l06-s26",
+          "en": "That's brilliant news!",
+          "zh": "这消息太好了！",
+          "audio": "audio/l06-s26.webm",
+          "words": [
+            "brilliant"
+          ]
+        },
+        {
+          "id": "l06-s27",
+          "en": "Oh no, that's rubbish, I'm sorry to hear that.",
+          "zh": "哦不，太糟了，很遗憾听到这个。",
+          "audio": "audio/l06-s27.webm",
+          "words": [
+            "rubbish"
+          ]
+        },
+        {
+          "id": "l06-s28",
+          "en": "Fair enough.",
+          "zh": "行吧，有道理。",
+          "audio": "audio/l06-s28.webm",
+          "words": [
+            "fair enough"
+          ]
+        },
+        {
+          "id": "l06-s29",
+          "en": "I don't want to be a pain, but could you help me with this?",
+          "zh": "我不想太麻烦你，但你能帮我一下吗？",
+          "audio": "audio/l06-s29.webm",
+          "words": [
+            "be a pain"
+          ]
+        },
+        {
+          "id": "l06-s30",
+          "en": "No bother at all.",
+          "zh": "一点都不麻烦。",
+          "audio": "audio/l06-s30.webm",
+          "words": [
+            "no bother at all"
+          ]
+        },
+        {
+          "id": "l06-s31",
+          "en": "That's a bit much, to be honest.",
+          "zh": "说实话，这有点过分了。",
+          "audio": "audio/l06-s31.webm",
+          "words": [
+            "a bit much"
+          ]
+        },
+        {
+          "id": "l06-s32",
+          "en": "This queue's taking forever, isn't it?",
+          "zh": "这队排得也太久了吧？",
+          "audio": "audio/l06-s32.webm",
+          "words": [
+            "taking forever"
+          ]
+        },
+        {
+          "id": "l06-s33",
+          "en": "Are you in the queue?",
+          "zh": "你在排队吗？",
+          "audio": "audio/l06-s33.webm",
+          "words": [
+            "in the queue"
+          ]
+        },
+        {
+          "id": "l06-s34",
+          "en": "This is my flatmate, Tom.",
+          "zh": "这是我的室友，汤姆。",
+          "audio": "audio/l06-s34.webm",
+          "words": [
+            "this is"
+          ]
+        },
+        {
+          "id": "l06-s35",
+          "en": "Nice to meet you, I've heard a lot about you.",
+          "zh": "很高兴认识你，久仰大名。",
+          "audio": "audio/l06-s35.webm",
+          "words": [
+            "heard a lot about you"
+          ]
+        },
+        {
+          "id": "l06-s36",
+          "en": "Anyway, I'd best be off.",
+          "zh": "好了，我该走了。",
+          "audio": "audio/l06-s36.webm",
+          "words": [
+            "best be off"
+          ]
+        },
+        {
+          "id": "l06-s37",
+          "en": "Catch you later!",
+          "zh": "回头见！",
+          "audio": "audio/l06-s37.webm",
+          "words": [
+            "catch you later"
+          ]
+        },
+        {
+          "id": "l06-s38",
+          "en": "Take care!",
+          "zh": "保重！",
+          "audio": "audio/l06-s38.webm",
+          "words": [
+            "take care"
+          ]
+        }
+      ]
     }
   ]
 }
